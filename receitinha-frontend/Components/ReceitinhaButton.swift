@@ -7,30 +7,6 @@
 
 import SwiftUI
 
-enum ReceitinhaButtonType {
-    case primary
-    case secondary
-    
-    var model: ReceitinhaButtonViewModel {
-        switch self {
-        case .primary:
-            return ReceitinhaButtonViewModel(background: .blue,
-                                             textColor: .white)
-            
-        case .secondary:
-            return ReceitinhaButtonViewModel(background: .white,
-                                             textColor: .blue)
-        }
-    }
-}
-
-
-struct ReceitinhaButtonViewModel {
-    
-    let background: Color
-    let textColor: Color
-}
-
 struct ReceitinhaButton: View {
     
     let spacing: CGFloat
@@ -46,17 +22,23 @@ struct ReceitinhaButton: View {
             Text(title)
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding(.all, 17)
-  
+                .fontWeight(.bold)
         }
         .foregroundColor(style.model.textColor)
         .background(style.model.background)
         .cornerRadius(25)
     }
+    
+    private var leftArrow: some View {
+        VStack {
+   
+        }
+    }
 
     
     var body: some View {
-        
         HStack {
+            
             Spacer()
                 .frame(width: spacing)
             button
@@ -70,8 +52,9 @@ struct ReceitinhaButton_Previews: PreviewProvider {
     static var previews: some View {
         ReceitinhaButton(spacing: 32,
                          style: .primary,
-                         title: "Testando"){
+                         title: "opa",
+                         userTap: {
             print("oi")
-        }
+        })
     }
 }

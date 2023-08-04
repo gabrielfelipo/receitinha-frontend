@@ -15,7 +15,8 @@ struct ContentView: View {
             
             ReceitinhaButton(spacing: 32,
                              style: .primary,
-                             title: "Clica em mim"){
+                             title: "Clica em mim"
+            ){
                 print("oi")
             }
         }

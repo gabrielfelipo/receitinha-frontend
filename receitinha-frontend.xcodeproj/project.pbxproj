@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */; };
+		0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */; };
+		0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */; };
 		CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */; };
 		CA29417C2A7BE3F4007AE12C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29417B2A7BE3F4007AE12C /* ContentView.swift */; };
 		CA29417E2A7BE3F4007AE12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA29417D2A7BE3F4007AE12C /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 
 /* Begin PBXFileReference section */
 		0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButton.swift; sourceTree = "<group>"; };
+		0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonType.swift; sourceTree = "<group>"; };
+		0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonViewModel.swift; sourceTree = "<group>"; };
 		CA2941762A7BE3F4007AE12C /* receitinha-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "receitinha-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receitinha_frontendApp.swift; sourceTree = "<group>"; };
 		CA29417B2A7BE3F4007AE12C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,9 +48,19 @@
 		0D63370F2A7BECE500EE9699 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0D6337142A7C347100EE9699 /* ReceitinhaButton */,
 				0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		0D6337142A7C347100EE9699 /* ReceitinhaButton */ = {
+			isa = PBXGroup;
+			children = (
+				0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */,
+				0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */,
+			);
+			path = ReceitinhaButton;
 			sourceTree = "<group>";
 		};
 		CA29416D2A7BE3F3007AE12C = {
@@ -159,6 +173,8 @@
 				0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */,
 				CA29417C2A7BE3F4007AE12C /* ContentView.swift in Sources */,
 				CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */,
+				0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */,
+				0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
