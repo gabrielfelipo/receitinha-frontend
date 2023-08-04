@@ -7,16 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */; };
+		0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */; };
+		0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */; };
+		0D6337232A7CAEDC00EE9699 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337222A7CAEDC00EE9699 /* MainView.swift */; };
+		0D6337282A7CAFAE00EE9699 /* ProcurarReceitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337252A7CAFAE00EE9699 /* ProcurarReceitaView.swift */; };
+		0D6337292A7CAFAE00EE9699 /* ProcurarReceitaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337262A7CAFAE00EE9699 /* ProcurarReceitaViewModel.swift */; };
+		0D63372A2A7CAFAE00EE9699 /* ProcurarReceita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337272A7CAFAE00EE9699 /* ProcurarReceita.swift */; };
+		0D63372D2A7CAFC500EE9699 /* ReceitasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63372B2A7CAFC500EE9699 /* ReceitasViewModel.swift */; };
+		0D63372E2A7CAFC500EE9699 /* Receitas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D63372C2A7CAFC500EE9699 /* Receitas.swift */; };
 		CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */; };
-		CA29417C2A7BE3F4007AE12C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29417B2A7BE3F4007AE12C /* ContentView.swift */; };
+		CA29417C2A7BE3F4007AE12C /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */; };
 		CA29417E2A7BE3F4007AE12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA29417D2A7BE3F4007AE12C /* Assets.xcassets */; };
 		CA2941812A7BE3F4007AE12C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2941802A7BE3F4007AE12C /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButton.swift; sourceTree = "<group>"; };
+		0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonType.swift; sourceTree = "<group>"; };
+		0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonViewModel.swift; sourceTree = "<group>"; };
+		0D6337222A7CAEDC00EE9699 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0D6337252A7CAFAE00EE9699 /* ProcurarReceitaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcurarReceitaView.swift; sourceTree = "<group>"; };
+		0D6337262A7CAFAE00EE9699 /* ProcurarReceitaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcurarReceitaViewModel.swift; sourceTree = "<group>"; };
+		0D6337272A7CAFAE00EE9699 /* ProcurarReceita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcurarReceita.swift; sourceTree = "<group>"; };
+		0D63372B2A7CAFC500EE9699 /* ReceitasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasViewModel.swift; sourceTree = "<group>"; };
+		0D63372C2A7CAFC500EE9699 /* Receitas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receitas.swift; sourceTree = "<group>"; };
 		CA2941762A7BE3F4007AE12C /* receitinha-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "receitinha-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receitinha_frontendApp.swift; sourceTree = "<group>"; };
-		CA29417B2A7BE3F4007AE12C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
 		CA29417D2A7BE3F4007AE12C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA2941802A7BE3F4007AE12C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +50,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D63370E2A7BECDA00EE9699 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0D6337242A7CAF6A00EE9699 /* ProcurarReceita */,
+				0D6337212A7CAE0B00EE9699 /* Receitas */,
+				0D6337222A7CAEDC00EE9699 /* MainView.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0D63370F2A7BECE500EE9699 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0D6337142A7C347100EE9699 /* ReceitinhaButton */,
+				0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0D6337142A7C347100EE9699 /* ReceitinhaButton */ = {
+			isa = PBXGroup;
+			children = (
+				0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */,
+				0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */,
+			);
+			path = ReceitinhaButton;
+			sourceTree = "<group>";
+		};
+		0D6337212A7CAE0B00EE9699 /* Receitas */ = {
+			isa = PBXGroup;
+			children = (
+				CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */,
+				0D63372B2A7CAFC500EE9699 /* ReceitasViewModel.swift */,
+				0D63372C2A7CAFC500EE9699 /* Receitas.swift */,
+			);
+			path = Receitas;
+			sourceTree = "<group>";
+		};
+		0D6337242A7CAF6A00EE9699 /* ProcurarReceita */ = {
+			isa = PBXGroup;
+			children = (
+				0D6337252A7CAFAE00EE9699 /* ProcurarReceitaView.swift */,
+				0D6337262A7CAFAE00EE9699 /* ProcurarReceitaViewModel.swift */,
+				0D6337272A7CAFAE00EE9699 /* ProcurarReceita.swift */,
+			);
+			path = ProcurarReceita;
+			sourceTree = "<group>";
+		};
 		CA29416D2A7BE3F3007AE12C = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +117,9 @@
 		CA2941782A7BE3F4007AE12C /* receitinha-frontend */ = {
 			isa = PBXGroup;
 			children = (
+				0D63370F2A7BECE500EE9699 /* Components */,
+				0D63370E2A7BECDA00EE9699 /* Modules */,
 				CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */,
-				CA29417B2A7BE3F4007AE12C /* ContentView.swift */,
 				CA29417D2A7BE3F4007AE12C /* Assets.xcassets */,
 				CA29417F2A7BE3F4007AE12C /* Preview Content */,
 			);
@@ -137,8 +204,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA29417C2A7BE3F4007AE12C /* ContentView.swift in Sources */,
+				0D6337292A7CAFAE00EE9699 /* ProcurarReceitaViewModel.swift in Sources */,
+				0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */,
+				0D63372D2A7CAFC500EE9699 /* ReceitasViewModel.swift in Sources */,
+				0D6337232A7CAEDC00EE9699 /* MainView.swift in Sources */,
+				0D63372E2A7CAFC500EE9699 /* Receitas.swift in Sources */,
+				0D6337282A7CAFAE00EE9699 /* ProcurarReceitaView.swift in Sources */,
+				0D63372A2A7CAFAE00EE9699 /* ProcurarReceita.swift in Sources */,
+				CA29417C2A7BE3F4007AE12C /* ReceitasView.swift in Sources */,
 				CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */,
+				0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */,
+				0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,7 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"receitinha-frontend/Preview Content\"";
-				DEVELOPMENT_TEAM = CMWHQAT5B4;
+				DEVELOPMENT_TEAM = 4UVYB4V5UN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -296,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"receitinha-frontend/Preview Content\"";
-				DEVELOPMENT_TEAM = CMWHQAT5B4;
+				DEVELOPMENT_TEAM = 4UVYB4V5UN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
