@@ -35,7 +35,7 @@ struct LandingPage: View {
 
 }
 
-struct Login_Previews: PreviewProvider {
+struct LandingPage_Previews: PreviewProvider {
     static var previews: some View {
         LandingPage()
     }
