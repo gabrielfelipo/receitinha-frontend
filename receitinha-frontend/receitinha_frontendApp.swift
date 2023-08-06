@@ -13,7 +13,7 @@ struct receitinha_frontendApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LandingPage()
         }
     }
 }
