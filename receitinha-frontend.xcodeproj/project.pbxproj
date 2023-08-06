@@ -151,17 +151,25 @@
 			path = ReceitinhaTextField;
 			sourceTree = "<group>";
 		};
+		0D15FEC32A806A9900FD64E4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0D15FEA92A801E7D00FD64E4 /* LoginView.swift */,
+				0D15FEAA2A801E7D00FD64E4 /* LoginViewModel.swift */,
+				0D15FEAB2A801E7D00FD64E4 /* Login.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		0D63370E2A7BECDA00EE9699 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				0D15FEC32A806A9900FD64E4 /* Login */,
 				0D15FE9C2A801AA500FD64E4 /* Cadastro */,
 				0D15FE9B2A801A9B00FD64E4 /* LandingPage */,
 				0D6337242A7CAF6A00EE9699 /* ProcurarReceita */,
 				0D6337212A7CAE0B00EE9699 /* Receitas */,
 				0D6337222A7CAEDC00EE9699 /* MainView.swift */,
-				0D15FEA92A801E7D00FD64E4 /* LoginView.swift */,
-				0D15FEAA2A801E7D00FD64E4 /* LoginViewModel.swift */,
-				0D15FEAB2A801E7D00FD64E4 /* Login.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
