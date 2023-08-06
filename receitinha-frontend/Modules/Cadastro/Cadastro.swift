@@ -8,6 +8,10 @@
 
 import SwiftUI
 
-struct Cadastro {
+struct Cadastro: Codable {
+    
+    let nome: String
+    let email: String
+    let senha: String
     
 }

@@ -11,6 +11,29 @@ import SwiftUI
 struct CadastroView: View {
 
     @ObservedObject private var viewModel = CadastroViewModel()
+    
+    @ViewBuilder
+    private var forms: some View {
+        
+        Spacer()
+            .frame(height: 88)
+        ReceitinhaTextField(placeholder: "Nome",
+                            text: $viewModel.nome,
+                            style: .normal,
+                            spacing: 16)
+        
+        ReceitinhaTextField(placeholder: "Email",
+                            text: $viewModel.email,
+                            style: .normal,
+                            spacing: 16)
+        
+        ReceitinhaTextField(placeholder: "Senha",
+                            text: $viewModel.senha,
+                            style: .secure,
+                            spacing: 16)
+        
+        Spacer()
+    }
        
     var body: some View {
             
@@ -22,30 +45,14 @@ struct CadastroView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 140)
-            
-            Spacer()
-                .frame(height: 88)
-            
-            ReceitinhaTextField(placeholder: "Nome",
-                                text: $viewModel.nome,
-                                spacing: 16)
-            
-            ReceitinhaTextField(placeholder: "Nome",
-                                text: $viewModel.nome,
-                                spacing: 16)
-            
-            ReceitinhaTextField(placeholder: "Nome",
-                                text: $viewModel.nome,
-                                spacing: 16)
-            
-            Spacer()
-                
+        
+            forms
             
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Cadastrar"){
                 
-                print("usuario clicou cadastrar")
+                viewModel.cadastrarUsuario()
             }
             
             Spacer()

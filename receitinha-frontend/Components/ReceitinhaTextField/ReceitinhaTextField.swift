@@ -37,11 +37,29 @@ private struct FocusablePadding : ViewModifier {
     
 }
 
+enum ReceitinhaTextFieldType {
+    
+    case normal
+    case secure
+}
+
 struct ReceitinhaTextField: View {
     
     let placeholder: String
     let text: Binding<String>
+    
+    let style: ReceitinhaTextFieldType
     let spacing: CGFloat
+    
+    
+    @ViewBuilder
+    var field: some View {
+        if style == .secure {
+            SecureField(placeholder, text: text)
+        } else {
+            TextField(placeholder, text: text)
+        }
+    }
     
     var body: some View {
         
@@ -50,7 +68,7 @@ struct ReceitinhaTextField: View {
             Spacer()
                 .frame(width: spacing)
             
-            TextField(placeholder, text: text)
+            field
                 .focusablePadding(.all, 8)
                 .background(.white)
                 .foregroundColor(.blue)
