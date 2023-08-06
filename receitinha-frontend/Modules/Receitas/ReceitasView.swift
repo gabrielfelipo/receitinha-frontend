@@ -10,10 +10,13 @@ import SwiftUI
 struct ReceitasView: View {
     
     var body: some View {
-        VStack {
-            
+        NavigationView {
+            VStack {
+                
+            }
+            .navigationTitle(Text(""))
+            .navigationBarTitleDisplayMode(.large)
         }
-        .background(.black)
     }
 }
 

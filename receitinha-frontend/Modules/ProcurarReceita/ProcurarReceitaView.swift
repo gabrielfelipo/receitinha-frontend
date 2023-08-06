@@ -13,7 +13,10 @@ struct ProcurarReceitaView: View {
     @ObservedObject private var viewModel = ProcurarReceitaViewModel()
        
     var body: some View {
-        Text(viewModel.example ?? "Hello World")
+        VStack{
+            
+        }
+        .navigationTitle("Home")
     }
 
 }
