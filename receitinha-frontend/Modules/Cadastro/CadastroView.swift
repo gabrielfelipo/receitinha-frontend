@@ -13,7 +13,29 @@ struct CadastroView: View {
     @ObservedObject private var viewModel = CadastroViewModel()
        
     var body: some View {
-        Text(viewModel.example ?? "Hello World")
+        ZStack {
+            Color(AssetColor.blue_100)
+            
+            VStack {
+                Image(AssetImage.cenourinha)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 140)
+                
+                ReceitinhaTextField(placeholder: "Nome",
+                                    text: $viewModel.nome,
+                                    spacing: 16)
+                
+                ReceitinhaTextField(placeholder: "Nome",
+                                    text: $viewModel.nome,
+                                    spacing: 16)
+                
+                ReceitinhaTextField(placeholder: "Nome",
+                                    text: $viewModel.nome,
+                                    spacing: 16)
+                
+            }
+        }
     }
 
 }

@@ -21,6 +21,7 @@
 		0D15FEB72A80205900FD64E4 /* AssetImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEB62A80205900FD64E4 /* AssetImage.swift */; };
 		0D15FEB92A80208E00FD64E4 /* AssetColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEB82A80208E00FD64E4 /* AssetColor.swift */; };
 		0D15FEBB2A8020F500FD64E4 /* LabelContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEBA2A8020F500FD64E4 /* LabelContent.swift */; };
+		0D15FEBE2A80253800FD64E4 /* ReceitinhaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEBD2A80253800FD64E4 /* ReceitinhaTextField.swift */; };
 		0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */; };
 		0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */; };
 		0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */; };
@@ -51,6 +52,7 @@
 		0D15FEB62A80205900FD64E4 /* AssetImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetImage.swift; sourceTree = "<group>"; };
 		0D15FEB82A80208E00FD64E4 /* AssetColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetColor.swift; sourceTree = "<group>"; };
 		0D15FEBA2A8020F500FD64E4 /* LabelContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelContent.swift; sourceTree = "<group>"; };
+		0D15FEBD2A80253800FD64E4 /* ReceitinhaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaTextField.swift; sourceTree = "<group>"; };
 		0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButton.swift; sourceTree = "<group>"; };
 		0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonType.swift; sourceTree = "<group>"; };
 		0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonViewModel.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		0D15FEBC2A80251B00FD64E4 /* ReceitinhaTextField */ = {
+			isa = PBXGroup;
+			children = (
+				0D15FEBD2A80253800FD64E4 /* ReceitinhaTextField.swift */,
+			);
+			path = ReceitinhaTextField;
+			sourceTree = "<group>";
+		};
 		0D63370E2A7BECDA00EE9699 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +166,7 @@
 		0D63370F2A7BECE500EE9699 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0D15FEBC2A80251B00FD64E4 /* ReceitinhaTextField */,
 				0D6337142A7C347100EE9699 /* ReceitinhaButton */,
 			);
 			path = Components;
@@ -317,6 +328,7 @@
 				0D63372A2A7CAFAE00EE9699 /* ProcurarReceita.swift in Sources */,
 				0D15FEAC2A801E7D00FD64E4 /* LoginView.swift in Sources */,
 				0D15FEA02A801AB500FD64E4 /* LandingPage.swift in Sources */,
+				0D15FEBE2A80253800FD64E4 /* ReceitinhaTextField.swift in Sources */,
 				0D15FEAE2A801E7D00FD64E4 /* Login.swift in Sources */,
 				0D15FE972A80033E00FD64E4 /* APIBuilder.swift in Sources */,
 				CA29417C2A7BE3F4007AE12C /* ReceitasView.swift in Sources */,

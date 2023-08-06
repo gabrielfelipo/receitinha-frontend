@@ -11,5 +11,8 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class CadastroViewModel: ObservableObject {
-    @Published var example: String?
+    
+    @Published var nome: String = ""
+    @Published var email: String = ""
+    @Published var senha: String = ""
 }
