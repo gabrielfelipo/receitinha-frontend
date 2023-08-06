@@ -13,29 +13,47 @@ struct CadastroView: View {
     @ObservedObject private var viewModel = CadastroViewModel()
        
     var body: some View {
-        ZStack {
-            Color(AssetColor.blue_100)
             
-            VStack {
-                Image(AssetImage.cenourinha)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 140)
+        VStack {
+            
+            Spacer()
+                .frame(height: 64)
+            Image(AssetImage.cenourinha)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 140)
+            
+            Spacer()
+                .frame(height: 88)
+            
+            ReceitinhaTextField(placeholder: "Nome",
+                                text: $viewModel.nome,
+                                spacing: 16)
+            
+            ReceitinhaTextField(placeholder: "Nome",
+                                text: $viewModel.nome,
+                                spacing: 16)
+            
+            ReceitinhaTextField(placeholder: "Nome",
+                                text: $viewModel.nome,
+                                spacing: 16)
+            
+            Spacer()
                 
-                ReceitinhaTextField(placeholder: "Nome",
-                                    text: $viewModel.nome,
-                                    spacing: 16)
+            
+            ReceitinhaButton(spacing: 16,
+                             style: .primary,
+                             title: "Cadastrar"){
                 
-                ReceitinhaTextField(placeholder: "Nome",
-                                    text: $viewModel.nome,
-                                    spacing: 16)
-                
-                ReceitinhaTextField(placeholder: "Nome",
-                                    text: $viewModel.nome,
-                                    spacing: 16)
-                
+                print("usuario clicou cadastrar")
             }
+            
+            Spacer()
+                .frame(height: 16)
+            
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(AssetColor.blue_100))
     }
 
 }
