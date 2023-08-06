@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D15FE972A80033E00FD64E4 /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FE962A80033E00FD64E4 /* APIBuilder.swift */; };
+		0D15FE9A2A80099100FD64E4 /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FE992A80099100FD64E4 /* Receita.swift */; };
 		0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */; };
 		0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */; };
 		0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D15FE962A80033E00FD64E4 /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
+		0D15FE992A80099100FD64E4 /* Receita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
 		0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButton.swift; sourceTree = "<group>"; };
 		0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonType.swift; sourceTree = "<group>"; };
 		0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonViewModel.swift; sourceTree = "<group>"; };
@@ -50,6 +54,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D15FE952A80032C00FD64E4 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0D15FE962A80033E00FD64E4 /* APIBuilder.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0D15FE982A80098700FD64E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0D15FE992A80099100FD64E4 /* Receita.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0D63370E2A7BECDA00EE9699 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +137,8 @@
 		CA2941782A7BE3F4007AE12C /* receitinha-frontend */ = {
 			isa = PBXGroup;
 			children = (
+				0D15FE982A80098700FD64E4 /* Model */,
+				0D15FE952A80032C00FD64E4 /* Service */,
 				0D63370F2A7BECE500EE9699 /* Components */,
 				0D63370E2A7BECDA00EE9699 /* Modules */,
 				CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */,
@@ -205,12 +227,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D6337292A7CAFAE00EE9699 /* ProcurarReceitaViewModel.swift in Sources */,
+				0D15FE9A2A80099100FD64E4 /* Receita.swift in Sources */,
 				0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */,
 				0D63372D2A7CAFC500EE9699 /* ReceitasViewModel.swift in Sources */,
 				0D6337232A7CAEDC00EE9699 /* MainView.swift in Sources */,
 				0D63372E2A7CAFC500EE9699 /* Receitas.swift in Sources */,
 				0D6337282A7CAFAE00EE9699 /* ProcurarReceitaView.swift in Sources */,
 				0D63372A2A7CAFAE00EE9699 /* ProcurarReceita.swift in Sources */,
+				0D15FE972A80033E00FD64E4 /* APIBuilder.swift in Sources */,
 				CA29417C2A7BE3F4007AE12C /* ReceitasView.swift in Sources */,
 				CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */,
 				0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */,

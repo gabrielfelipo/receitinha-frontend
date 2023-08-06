@@ -16,7 +16,6 @@ struct MainView: View {
                     Label("Receitas", systemImage: "fork.knife")
                 }
             
-            
             ProcurarReceitaView()
                 .tabItem {
                     Label("Procurar", systemImage: "magnifyingglass")

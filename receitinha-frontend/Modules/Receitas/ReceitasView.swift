@@ -9,11 +9,15 @@ import SwiftUI
 
 struct ReceitasView: View {
     
+    @ObservedObject private var viewModel = ReceitasViewModel()
+    @State private var searchText = ""
+    
     var body: some View {
-        VStack {
-            
+        NavigationView {
+            VStack {
+                Color("blue-100")
+            }
         }
-        .background(.black)
     }
 }
 
