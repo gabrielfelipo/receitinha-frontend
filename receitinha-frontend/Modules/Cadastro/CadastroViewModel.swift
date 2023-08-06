@@ -11,11 +11,6 @@ import Combine
 
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
-enum CadastrarUsuarioError: Error {
-    
-    case encodingError(_ error: Error)
-}
-
 final class CadastroViewModel: ObservableObject {
     
     @Published var nome: String = ""
@@ -24,7 +19,8 @@ final class CadastroViewModel: ObservableObject {
     
     private var caller = APICaller()
     
-    @Published var apiCallerCompleted: APICallerStatus = .withoutCall
+    @Published var isSomethingWrong = false
+    @Published var isCadastroCompleto = false
     
     func cadastrarUsuario(){
         let usuario = Cadastro(nome: nome, email: email, senha: senha)
@@ -36,12 +32,6 @@ final class CadastroViewModel: ObservableObject {
         
         Task {
             let response = await caller.peform(request)
-            switch response {
-            case .success:
-                self.apiCallerCompleted = .completed
-            case .failure:
-                self.apiCallerCompleted = .bad_request
-            }
         }
     
     }

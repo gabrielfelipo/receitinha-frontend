@@ -17,8 +17,6 @@ enum APICallerError: Error {
 
 enum APICallerStatus {
     case completed
-    case bad_request
-    case withoutCall
 }
 
 

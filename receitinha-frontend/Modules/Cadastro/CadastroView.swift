@@ -11,6 +11,8 @@ import SwiftUI
 struct CadastroView: View {
 
     @ObservedObject private var viewModel = CadastroViewModel()
+    @EnvironmentObject var coordinator: ViewCordinator
+    
     
     @ViewBuilder
     private var forms: some View {
@@ -51,7 +53,6 @@ struct CadastroView: View {
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Cadastrar"){
-                
                 viewModel.cadastrarUsuario()
             }
             
