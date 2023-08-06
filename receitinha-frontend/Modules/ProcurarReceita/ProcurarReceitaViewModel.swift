@@ -11,5 +11,6 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class ProcurarReceitaViewModel: ObservableObject {
-    @Published var example: String?
+    
+    @Published var searchText: String = ""
 }

@@ -11,9 +11,7 @@ import SwiftUI
 struct ProcurarReceitaView: View {
 
     @ObservedObject private var viewModel = ProcurarReceitaViewModel()
-    
-    @State private var searchText = ""
-       
+           
     var body: some View {
         NavigationView {
             VStack {
@@ -23,7 +21,7 @@ struct ProcurarReceitaView: View {
             .background(.white)
             .navigationTitle(Text("Procurar Receita"))
             .navigationBarTitleDisplayMode(.large)
-            .searchable(text: $searchText)
+            .searchable(text: $viewModel.searchText)
         }
     }
 
