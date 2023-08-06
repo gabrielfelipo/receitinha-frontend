@@ -11,5 +11,4 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class ReceitasViewModel: ObservableObject {
-    @Published var example: String?
 }

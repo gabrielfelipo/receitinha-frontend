@@ -11,12 +11,20 @@ import SwiftUI
 struct ProcurarReceitaView: View {
 
     @ObservedObject private var viewModel = ProcurarReceitaViewModel()
+    
+    @State private var searchText = ""
        
     var body: some View {
-        VStack{
-            
+        NavigationView {
+            VStack {
+                Color("blue-100")
+                
+            }
+            .background(.white)
+            .navigationTitle(Text("Procurar Receita"))
+            .navigationBarTitleDisplayMode(.large)
+            .searchable(text: $searchText)
         }
-        .navigationTitle("Home")
     }
 
 }
