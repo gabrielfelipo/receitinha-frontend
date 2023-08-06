@@ -24,6 +24,8 @@ final class CadastroViewModel: ObservableObject {
     
     private var caller = APICaller()
     
+    @Published var apiCallerCompleted: APICallerStatus = .withoutCall
+    
     func cadastrarUsuario(){
         let usuario = Cadastro(nome: nome, email: email, senha: senha)
         let api = APIBuilder().routeTo(.cadastrar_usuario).build()
@@ -33,7 +35,13 @@ final class CadastroViewModel: ObservableObject {
         let request = caller.createRequest(with: api, and: .post, body: jsonData)
         
         Task {
-            await caller.peform(request)
+            let response = await caller.peform(request)
+            switch response {
+            case .success:
+                self.apiCallerCompleted = .completed
+            case .failure:
+                self.apiCallerCompleted = .bad_request
+            }
         }
     
     }
