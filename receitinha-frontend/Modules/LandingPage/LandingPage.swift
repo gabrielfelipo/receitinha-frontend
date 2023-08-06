@@ -9,28 +9,30 @@
 import SwiftUI
 
 struct LandingPage: View {
+    
+    @EnvironmentObject var coordinator: ViewCordinator
        
     var body: some View {
         VStack {
-            Color("blue-100")
-            Image("cenourinha")
+            Color(AssetColor.blue_100)
+            Image(AssetImage.cenourinha)
             
             Spacer()
                 .frame(height: 200)
             
             ReceitinhaButton(spacing: 16,
                              style: .primary,
-                             title: "Login"){
-                print("tocou em login ")
+                             title: LabelContent.LOGIN_BUTTON){
+                coordinator.push(view: .login)
             }
             
             ReceitinhaButton(spacing: 16,
                              style: .primary,
-                             title: "Fazer conta"){
-                print("fazer conta")
+                             title: LabelContent.CADASTRO_BUTTON){
+                coordinator.push(view: .cadastro)
             }
         }
-        .background(Color("blue-100"))
+        .background(Color(AssetColor.blue_100))
     }
 
 }
