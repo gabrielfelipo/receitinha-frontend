@@ -11,6 +11,7 @@ import SwiftUI
 struct receitinha_frontendApp: App {
     
     @ObservedObject var coordinator = ViewCordinator()
+    @StateObject var loginManager = LoginManager()
     
     
     var body: some Scene {
@@ -18,7 +19,7 @@ struct receitinha_frontendApp: App {
             if #available(iOS 16.0, *){
                 NavigationStack(path: $coordinator.path){
                     
-                    if AuthManager.shared.isAuth {
+                    if loginManager.isLoggedIn {
                         MainView()
                     } else {
                         
@@ -29,14 +30,15 @@ struct receitinha_frontendApp: App {
                                     LoginView()
                                 case .cadastro:
                                     CadastroView()
+                                case .tab:
+                                    MainView()
+                                        .navigationBarBackButtonHidden(true)
                                 }
-                            }
-                        
+                        }
                     }
-                    
-    
                 }
                 .environmentObject(coordinator)
+                .environmentObject(loginManager)
             }
         }
     }
