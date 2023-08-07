@@ -11,6 +11,25 @@ struct FoodCard: View {
     
     let spacing: CGFloat
     
+    var body: some View {
+    
+        HStack {
+            imageAndDetails
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
+        .background(.white)
+        .cornerRadius(8)
+    }
+    
+    private var imageAndDetails: some View {
+        HStack(spacing: 8) {
+            Image("comida")
+            details
+            Spacer()
+        }
+        .padding(.leading, 8)
+    }
+    
     private var details: some View {
         VStack(alignment: .leading, spacing: 8) {
             
@@ -28,22 +47,5 @@ struct FoodCard: View {
         
     }
     
-    private var imageAndDetails: some View {
-        HStack(spacing: 8) {
-            Image("comida")
-            details
-            Spacer()
-        }
-        .padding(.leading, 8)
-    }
-    
-    var body: some View {
-        
-        HStack {
-            imageAndDetails
-        }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
-        .background(.white)
-        .cornerRadius(8)
-    }
+
 }
