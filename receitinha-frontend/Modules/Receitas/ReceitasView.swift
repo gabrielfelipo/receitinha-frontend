@@ -14,12 +14,26 @@ struct ReceitasView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            ZStack {
+                Color(AssetColor.blue_100)
                 
                 
-                ForEach(1...4, id: \.self){ _ in
-                    FoodCard(spacing: 16)
+                VStack {
+                    ForEach(1...4, id: \.self){ _ in
+                        HStack {
+                            Spacer()
+                                .frame(width: 16)
+                            
+                            FoodCard(spacing: 16)
+                            
+                            Spacer()
+                                .frame(width: 16)
+                        }
+                
+                    }
+                    
                 }
+
             }
             .background(.white)
             .navigationTitle(Text("Escolher Receita"))

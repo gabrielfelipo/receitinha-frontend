@@ -16,36 +16,34 @@ struct FoodCard: View {
             
             Image("comida")
             
-            Spacer()
-            
-            VStack {
-                Text("titulo")
-                Text("subtitulo")
+            VStack(alignment: .leading, spacing: 8) {
+                
+
+                Text("Misto quente")
+                
+                VStack(alignment: .leading) {
+                    Text("Duração: 10 minutos")
+                    Text("Dificuldade: Fácil")
+                }
+                
+                Spacer()
+     
             }
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .background(.yellow)
-            
+            .padding(.top, 8)
+            .frame(height: 120)
+
             Spacer()
         }
-        .background(.green)
+        .padding(.leading, 8)
     }
     
     var body: some View {
         
         HStack {
-        
-            HStack {
-                
-                Spacer()
-                    .frame(width: spacing)
-        
-                imageAndDetails
-                
-                Spacer()
-                    .frame(width: spacing)
-            }
+            imageAndDetails
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
-        .background(.blue)
+        .background(.white)
+        .cornerRadius(8)
     }
 }
