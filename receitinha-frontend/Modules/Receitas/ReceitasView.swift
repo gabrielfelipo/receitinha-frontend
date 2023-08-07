@@ -18,7 +18,7 @@ struct ReceitasView: View {
                 Color(AssetColor.blue_100)
                 
                 
-                VStack {
+                ScrollView {
                     ForEach(1...4, id: \.self){ _ in
                         HStack {
                             Spacer()
@@ -33,6 +33,7 @@ struct ReceitasView: View {
                     }
                     
                 }
+                .padding(.top, 24)
 
             }
             .background(.white)
