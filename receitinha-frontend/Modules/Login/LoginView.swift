@@ -11,9 +11,49 @@ import SwiftUI
 struct LoginView: View {
 
     @ObservedObject private var viewModel = LoginViewModel()
+    
+    @ViewBuilder
+    private var forms: some View {
+        
+        Spacer()
+            .frame(height: 88)
+        
+        ReceitinhaTextField(placeholder: "Email",
+                            text: $viewModel.email,
+                            style: .normal,
+                            spacing: 16)
+        
+        ReceitinhaTextField(placeholder: "Senha",
+                            text: $viewModel.senha,
+                            style: .secure,
+                            spacing: 16)
+        
+        Spacer()
+    }
        
     var body: some View {
-        Text(viewModel.example ?? "Hello World")
+        VStack {
+            
+            Spacer()
+                .frame(height: 64)
+            Image(AssetImage.cenourinha)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 140)
+        
+            forms
+            
+            ReceitinhaButton(spacing: 16,
+                             style: .primary,
+                             title: "Login"){
+            }
+            
+            Spacer()
+                .frame(height: 16)
+            
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(AssetColor.blue_100))
     }
 
 }

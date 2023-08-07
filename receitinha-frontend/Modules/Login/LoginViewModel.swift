@@ -11,5 +11,7 @@ import SwiftUI
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
 final class LoginViewModel: ObservableObject {
-    @Published var example: String?
+    
+    @Published var email: String = ""
+    @Published var senha: String = ""
 }
