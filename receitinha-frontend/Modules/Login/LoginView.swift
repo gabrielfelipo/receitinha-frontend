@@ -46,6 +46,7 @@ struct LoginView: View {
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Login"){
+                viewModel.authenticate()
             }
             
             Spacer()

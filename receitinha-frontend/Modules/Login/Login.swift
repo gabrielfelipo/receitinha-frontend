@@ -10,4 +10,7 @@ import SwiftUI
 
 struct Login {
     
+    let email: String
+    let senha: String
+    
 }
