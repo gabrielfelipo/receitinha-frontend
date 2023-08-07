@@ -20,16 +20,8 @@ struct ReceitasView: View {
                 
                 ScrollView {
                     ForEach(1...4, id: \.self){ _ in
-                        HStack {
-                            Spacer()
-                                .frame(width: 16)
                             
-                            FoodCard(spacing: 16)
-                            
-                            Spacer()
-                                .frame(width: 16)
-                        }
-                
+                        FoodCard(spacing: 16)
                     }
                     
                 }

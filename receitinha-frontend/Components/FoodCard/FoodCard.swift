@@ -12,13 +12,21 @@ struct FoodCard: View {
     let spacing: CGFloat
     
     var body: some View {
-    
+        
         HStack {
-            imageAndDetails
+            Spacer()
+                .frame(width: 16)
+            
+            HStack {
+                imageAndDetails
+            }
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
+            .background(.white)
+            .cornerRadius(8)
+            
+            Spacer()
+                .frame(width: 16)
         }
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
-        .background(.white)
-        .cornerRadius(8)
     }
     
     private var imageAndDetails: some View {
