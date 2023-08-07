@@ -48,7 +48,6 @@ struct LoginView: View {
                              style: .primary,
                              title: "Login"){
                 viewModel.authenticate()
-                coordinator.push(view: .tab)
             }
 
             Spacer()

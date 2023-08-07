@@ -29,9 +29,6 @@ struct receitinha_frontendApp: App {
                                     LoginView()
                                 case .cadastro:
                                     CadastroView()
-                                case .tab:
-                                    MainView()
-                                        .navigationBarBackButtonHidden(true)
                                 }
                             }
                         
