@@ -16,17 +16,19 @@ struct FoodCard: View {
         HStack {
             Spacer()
                 .frame(width: 16)
-            
-            HStack {
-                imageAndDetails
-            }
-            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
-            .background(.white)
-            .cornerRadius(8)
-            
+            card
             Spacer()
                 .frame(width: 16)
         }
+    }
+    
+    private var card: some View {
+        HStack {
+            imageAndDetails
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
+        .background(.white)
+        .cornerRadius(8)
     }
     
     private var imageAndDetails: some View {
