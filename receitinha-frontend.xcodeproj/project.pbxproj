@@ -25,6 +25,7 @@
 		0D15FEC22A8036FB00FD64E4 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC12A8036FB00FD64E4 /* APICaller.swift */; };
 		0D15FEC62A80772100FD64E4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC52A80772100FD64E4 /* AuthManager.swift */; };
 		0D15FECA2A8128FC00FD64E4 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC92A8128FC00FD64E4 /* LoginManager.swift */; };
+		0D15FECD2A812B5600FD64E4 /* FoodCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FECC2A812B5600FD64E4 /* FoodCard.swift */; };
 		0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */; };
 		0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */; };
 		0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */; };
@@ -59,6 +60,7 @@
 		0D15FEC12A8036FB00FD64E4 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		0D15FEC52A80772100FD64E4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		0D15FEC92A8128FC00FD64E4 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		0D15FECC2A812B5600FD64E4 /* FoodCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCard.swift; sourceTree = "<group>"; };
 		0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButton.swift; sourceTree = "<group>"; };
 		0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonType.swift; sourceTree = "<group>"; };
 		0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonViewModel.swift; sourceTree = "<group>"; };
@@ -174,6 +176,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		0D15FECB2A812B4A00FD64E4 /* FoodCard */ = {
+			isa = PBXGroup;
+			children = (
+				0D15FECC2A812B5600FD64E4 /* FoodCard.swift */,
+			);
+			path = FoodCard;
+			sourceTree = "<group>";
+		};
 		0D63370E2A7BECDA00EE9699 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +200,7 @@
 		0D63370F2A7BECE500EE9699 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0D15FECB2A812B4A00FD64E4 /* FoodCard */,
 				0D15FEBC2A80251B00FD64E4 /* ReceitinhaTextField */,
 				0D6337142A7C347100EE9699 /* ReceitinhaButton */,
 			);
@@ -365,6 +376,7 @@
 				0D15FEC22A8036FB00FD64E4 /* APICaller.swift in Sources */,
 				0D15FEB42A801EB200FD64E4 /* Cadastro.swift in Sources */,
 				0D15FEB22A801EB200FD64E4 /* CadastroView.swift in Sources */,
+				0D15FECD2A812B5600FD64E4 /* FoodCard.swift in Sources */,
 				0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */,
 				0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */,
 			);

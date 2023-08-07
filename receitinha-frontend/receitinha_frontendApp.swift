@@ -16,7 +16,6 @@ struct receitinha_frontendApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if #available(iOS 16.0, *){
                 NavigationStack(path: $coordinator.path){
                     
                     if loginManager.isLoggedIn {
@@ -39,7 +38,7 @@ struct receitinha_frontendApp: App {
                 }
                 .environmentObject(coordinator)
                 .environmentObject(loginManager)
-            }
+            
         }
     }
 }
