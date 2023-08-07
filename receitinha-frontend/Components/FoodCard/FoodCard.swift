@@ -20,6 +20,7 @@ struct FoodCard: View {
             Spacer()
                 .frame(width: 16)
         }
+        .shadow(color: Color.black.opacity(0.35), radius: 3, x: 0, y: 3)
     }
     
     private var card: some View {
@@ -28,6 +29,7 @@ struct FoodCard: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 120)
         .background(.white)
+    
         .cornerRadius(8)
     }
     
