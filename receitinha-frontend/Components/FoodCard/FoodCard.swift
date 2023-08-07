@@ -11,27 +11,27 @@ struct FoodCard: View {
     
     let spacing: CGFloat
     
-    var imageAndDetails: some View {
-        HStack(spacing: 8) {
+    private var details: some View {
+        VStack(alignment: .leading, spacing: 8) {
             
-            Image("comida")
+            Text("Misto quente")
             
-            VStack(alignment: .leading, spacing: 8) {
-                
-
-                Text("Misto quente")
-                
-                VStack(alignment: .leading) {
-                    Text("Duração: 10 minutos")
-                    Text("Dificuldade: Fácil")
-                }
-                
-                Spacer()
-     
+            VStack(alignment: .leading) {
+                Text("Duração: 10 minutos")
+                Text("Dificuldade: Fácil")
             }
-            .padding(.top, 8)
-            .frame(height: 120)
 
+            Spacer()
+        }
+        .padding(.top, 8)
+        .frame(height: 120)
+        
+    }
+    
+    private var imageAndDetails: some View {
+        HStack(spacing: 8) {
+            Image("comida")
+            details
             Spacer()
         }
         .padding(.leading, 8)
