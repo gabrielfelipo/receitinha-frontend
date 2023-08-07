@@ -11,4 +11,5 @@ import Foundation
 enum Route: Hashable {
     case login
     case cadastro
+    case tab
 }

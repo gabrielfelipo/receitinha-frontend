@@ -11,6 +11,7 @@ import SwiftUI
 struct LoginView: View {
 
     @ObservedObject private var viewModel = LoginViewModel()
+    @EnvironmentObject var coordinator: ViewCordinator
     
     @ViewBuilder
     private var forms: some View {
@@ -47,8 +48,9 @@ struct LoginView: View {
                              style: .primary,
                              title: "Login"){
                 viewModel.authenticate()
+                coordinator.push(view: .tab)
             }
-            
+
             Spacer()
                 .frame(height: 16)
             

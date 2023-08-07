@@ -23,6 +23,7 @@
 		0D15FEBB2A8020F500FD64E4 /* LabelContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEBA2A8020F500FD64E4 /* LabelContent.swift */; };
 		0D15FEBE2A80253800FD64E4 /* ReceitinhaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEBD2A80253800FD64E4 /* ReceitinhaTextField.swift */; };
 		0D15FEC22A8036FB00FD64E4 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC12A8036FB00FD64E4 /* APICaller.swift */; };
+		0D15FEC62A80772100FD64E4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC52A80772100FD64E4 /* AuthManager.swift */; };
 		0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */; };
 		0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */; };
 		0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */; };
@@ -55,6 +56,7 @@
 		0D15FEBA2A8020F500FD64E4 /* LabelContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelContent.swift; sourceTree = "<group>"; };
 		0D15FEBD2A80253800FD64E4 /* ReceitinhaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaTextField.swift; sourceTree = "<group>"; };
 		0D15FEC12A8036FB00FD64E4 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		0D15FEC52A80772100FD64E4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButton.swift; sourceTree = "<group>"; };
 		0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonType.swift; sourceTree = "<group>"; };
 		0D6337172A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonViewModel.swift; sourceTree = "<group>"; };
@@ -161,6 +163,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		0D15FEC42A80770900FD64E4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0D15FEC52A80772100FD64E4 /* AuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		0D63370E2A7BECDA00EE9699 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +242,7 @@
 		CA2941782A7BE3F4007AE12C /* receitinha-frontend */ = {
 			isa = PBXGroup;
 			children = (
+				0D15FEC42A80770900FD64E4 /* Managers */,
 				0D15FEB52A80204700FD64E4 /* Constants */,
 				0D15FEA62A801D6C00FD64E4 /* Screen */,
 				0D15FEA32A801D3500FD64E4 /* Cordinator */,
@@ -325,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D6337292A7CAFAE00EE9699 /* ProcurarReceitaViewModel.swift in Sources */,
+				0D15FEC62A80772100FD64E4 /* AuthManager.swift in Sources */,
 				0D15FE9A2A80099100FD64E4 /* Receita.swift in Sources */,
 				0D15FEB72A80205900FD64E4 /* AssetImage.swift in Sources */,
 				0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */,

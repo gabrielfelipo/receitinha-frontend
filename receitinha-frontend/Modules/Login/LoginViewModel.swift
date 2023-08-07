@@ -21,8 +21,7 @@ final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var senha: String = ""
     
-    func authenticate() -> Result<Login, LoginError> {
-        let user = Login(email: "alex123@gmail.com", senha: "1234")
-        return .success(user)
+    func authenticate() {
+        AuthManager.shared.authenticated()
     }
 }

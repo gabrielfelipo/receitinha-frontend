@@ -17,16 +17,27 @@ struct receitinha_frontendApp: App {
         WindowGroup {
             if #available(iOS 16.0, *){
                 NavigationStack(path: $coordinator.path){
-                    LandingPage()
-                        .navigationDestination(for: Route.self){ destination in
-                            switch destination {
-                            case .login:
-                                LoginView()
-                            case .cadastro:
-                                CadastroView()
-                                
+                    
+                    if AuthManager.shared.isAuth {
+                        MainView()
+                    } else {
+                        
+                        LandingPage()
+                            .navigationDestination(for: Route.self){ destination in
+                                switch destination {
+                                case .login:
+                                    LoginView()
+                                case .cadastro:
+                                    CadastroView()
+                                case .tab:
+                                    MainView()
+                                        .navigationBarBackButtonHidden(true)
+                                }
                             }
-                        }
+                        
+                    }
+                    
+    
                 }
                 .environmentObject(coordinator)
             }
