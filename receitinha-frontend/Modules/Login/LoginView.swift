@@ -12,6 +12,7 @@ struct LoginView: View {
 
     @ObservedObject private var viewModel = LoginViewModel()
     @EnvironmentObject var coordinator: ViewCordinator
+    @EnvironmentObject var loginManager: LoginManager
     
     @ViewBuilder
     private var forms: some View {
@@ -48,6 +49,9 @@ struct LoginView: View {
                              style: .primary,
                              title: "Login"){
                 viewModel.authenticate()
+                coordinator.goToHome()
+//                coordinator.pop()
+//                loginManager.login()
             }
 
             Spacer()

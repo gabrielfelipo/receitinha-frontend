@@ -18,4 +18,13 @@ class ViewCordinator: ObservableObject {
     func pop(){
         path.removeLast()
     }
+    
+    func goToHome(){
+        while(path.count != 1) {
+            self.pop()
+        }
+        
+        path[0] = .tab
+    
+    }
 }
