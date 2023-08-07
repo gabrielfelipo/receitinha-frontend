@@ -50,8 +50,6 @@ struct LoginView: View {
                              title: "Login"){
                 viewModel.authenticate()
                 coordinator.goToHome()
-//                coordinator.pop()
-//                loginManager.login()
             }
 
             Spacer()

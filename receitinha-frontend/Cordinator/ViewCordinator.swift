@@ -25,6 +25,5 @@ class ViewCordinator: ObservableObject {
         }
         
         path[0] = .tab
-    
     }
 }
