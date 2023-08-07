@@ -40,22 +40,28 @@ struct FoodCard: View {
         .padding(.leading, 8)
     }
     
+    
     private var details: some View {
         VStack(alignment: .leading, spacing: 8) {
-            
             Text("Misto quente")
+                .fontWeight(.bold)
+                .font(.title3)
             
             VStack(alignment: .leading) {
-                Text("Duração: 10 minutos")
-                Text("Dificuldade: Fácil")
+                createDetailsText("Duração: 10 minutos")
+                createDetailsText("Dificuldade: Fácil")
             }
-
             Spacer()
         }
         .padding(.top, 8)
         .frame(height: 120)
-        
     }
     
-
+    private func createDetailsText(_ text: String) -> some View {
+        Text(text)
+            .foregroundColor(Color(AssetColor.dark_gray))
+            .fontWeight(.semibold)
+            .font(.body)
+        
+    }
 }

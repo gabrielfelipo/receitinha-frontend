@@ -12,7 +12,6 @@ struct LoginView: View {
 
     @ObservedObject private var viewModel = LoginViewModel()
     @EnvironmentObject var coordinator: ViewCordinator
-    @EnvironmentObject var loginManager: LoginManager
     
     @ViewBuilder
     private var forms: some View {

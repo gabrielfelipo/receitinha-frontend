@@ -23,6 +23,7 @@ final class CadastroViewModel: ObservableObject {
     @Published var isCadastroCompleto = false
     
     func cadastrarUsuario(){
+        
         let usuario = Cadastro(nome: nome, email: email, senha: senha)
         let api = APIBuilder().routeTo(.cadastrar_usuario).build()
         
@@ -31,7 +32,7 @@ final class CadastroViewModel: ObservableObject {
         let request = caller.createRequest(with: api, and: .post, body: jsonData)
         
         Task {
-            let response = await caller.peform(request)
+            await caller.peform(request)
         }
     
     }
