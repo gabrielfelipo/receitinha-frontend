@@ -26,7 +26,7 @@ struct ReceitasView: View {
     
     private var cards: some View {
         ScrollView {
-            ForEach(1...4, id: \.self){ _ in
+            ForEach(1...10, id: \.self){ _ in
                 FoodCard(spacing: 16)
             }
         }
