@@ -28,8 +28,11 @@ struct AchievementView: View {
                         .padding(.horizontal, 24)
                     
                     achievements
+                    
+                    Spacer()
                 }
-                
+                .padding(.top, 32)
+                .padding(.horizontal, 8)
             }
             .background(.white)
             .navigationTitle(Text("Conquistas"))
@@ -38,9 +41,10 @@ struct AchievementView: View {
     }
     
     private var achievements: some View {
+        
         LazyVGrid(columns: columns) {
-            ForEach(1...4, id: \.self){ index in
-                Text("Texto: \(index)")
+            ForEach(viewModel.achievements, id: \.self){ achievement in
+                AchievementCard(achievement: achievement)
             }
         }
     }
