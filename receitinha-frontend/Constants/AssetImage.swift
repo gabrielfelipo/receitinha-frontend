@@ -10,4 +10,5 @@ import Foundation
 
 struct AssetImage {
     static let cenourinha = "cenourinha"
+    static let trofeu = "trofeu"
 }
