@@ -16,28 +16,25 @@ struct AchievementView: View {
         NavigationView {
             ZStack {
                 Color(AssetColor.blue_100)
-                
-                VStack(spacing: 24) {
-                    
-                    Image(AssetImage.trofeu)
-                    
-                    Text("Cozinhe novas receitas para ganhar conquistas!")
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color(AssetColor.dark_gray))
-                        .padding(.horizontal, 24)
-                    
-                    achievements
-                    
-                    Spacer()
-                }
-                .padding(.top, 32)
-                .padding(.horizontal, 8)
+                contentAchievement
             }
             .background(.white)
             .navigationTitle(Text("Conquistas"))
             .navigationBarTitleDisplayMode(.large)
         }
+    }
+    
+    private var contentAchievement: some View {
+        VStack(spacing: 24) {
+            Image(AssetImage.trofeu)
+            
+            callActionToCook
+            achievements
+            Spacer()
+        }
+        .padding(.top, 32)
+        .padding(.horizontal, 8)
+        
     }
     
     private var achievements: some View {
@@ -47,6 +44,15 @@ struct AchievementView: View {
                 AchievementCard(achievement: achievement)
             }
         }
+    }
+    
+    private var callActionToCook: some View {
+
+        Text("Cozinhe novas receitas para ganhar conquistas!")
+            .font(.headline)
+            .multilineTextAlignment(.center)
+            .foregroundColor(Color(AssetColor.dark_gray))
+            .padding(.horizontal, 24)
     }
     
     private let columns = [
