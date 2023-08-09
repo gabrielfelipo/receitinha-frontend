@@ -8,6 +8,17 @@
 
 import SwiftUI
 
-struct Achievement {
+struct Achievement: Hashable {
     
+    let image: String
+    let name: String
+    let avaiable: AchievementStatus
+
+}
+
+
+enum AchievementStatus {
+    
+    case blocked
+    case completed
 }
