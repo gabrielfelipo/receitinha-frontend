@@ -42,7 +42,7 @@ struct AchievementView: View {
     
     private var achievements: some View {
         
-        LazyVGrid(columns: columns) {
+        LazyVGrid(columns: columns, spacing: 24) {
             ForEach(viewModel.achievements, id: \.self){ achievement in
                 AchievementCard(achievement: achievement)
             }
