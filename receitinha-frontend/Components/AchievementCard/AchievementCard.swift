@@ -13,6 +13,9 @@ struct AchievementCard: View {
     
     private var achievementText: Text {
         Text(achievement.avaiable == .blocked ? "Bloqueado" : achievement.name)
+            .foregroundColor(Color(AssetColor.gray_500))
+            .font(.caption)
+            .fontWeight(.bold)
     }
     
     var body: some View {
@@ -23,9 +26,3 @@ struct AchievementCard: View {
         }
     }
 }
-
-//struct AchievementCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AchievementCard()
-//    }
-//}
