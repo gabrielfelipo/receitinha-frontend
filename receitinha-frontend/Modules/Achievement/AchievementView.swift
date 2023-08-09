@@ -27,14 +27,12 @@ struct AchievementView: View {
     private var contentAchievement: some View {
         VStack(spacing: 24) {
             Image(AssetImage.trofeu)
-            
             callActionToCook
             achievements
             Spacer()
         }
         .padding(.top, 32)
         .padding(.horizontal, 8)
-        
     }
     
     private var achievements: some View {

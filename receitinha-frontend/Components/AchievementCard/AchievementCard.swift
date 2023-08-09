@@ -11,18 +11,22 @@ struct AchievementCard: View {
     
     let achievement: Achievement
     
-    private var achievementText: Text {
-        Text(achievement.avaiable == .blocked ? "Bloqueado" : achievement.name)
-            .foregroundColor(Color(AssetColor.gray_500))
-            .font(.caption)
-            .fontWeight(.bold)
-    }
-    
     var body: some View {
-        
+
         VStack(spacing: 8){
             Image(achievement.image)
             achievementText
         }
+    }
+    
+    private var achievementText: Text {
+        Text(achievement.avaiable == .blocked ? "Bloqueado" : achievement.name)
+            .foregroundColor(textColor)
+            .font(.caption)
+            .fontWeight(.bold)
+    }
+    
+    private var textColor: Color {
+        achievement.avaiable == .blocked ? Color(AssetColor.gray_500) : Color(AssetColor.yellow_600)
     }
 }
