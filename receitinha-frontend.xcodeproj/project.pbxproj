@@ -39,6 +39,7 @@
 		CA29417C2A7BE3F4007AE12C /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */; };
 		CA29417E2A7BE3F4007AE12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA29417D2A7BE3F4007AE12C /* Assets.xcassets */; };
 		CA2941812A7BE3F4007AE12C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2941802A7BE3F4007AE12C /* Preview Assets.xcassets */; };
+		CA2B68F82A83B23D00451C68 /* PreviaReceitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2B68F72A83B23D00451C68 /* PreviaReceitaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
 		CA29417D2A7BE3F4007AE12C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA2941802A7BE3F4007AE12C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA2B68F72A83B23D00451C68 /* PreviaReceitaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviaReceitaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		0D63370E2A7BECDA00EE9699 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CA2B68F62A83B21700451C68 /* PreviaReceita */,
 				0D15FEC32A806A9900FD64E4 /* Login */,
 				0D15FE9C2A801AA500FD64E4 /* Cadastro */,
 				0D15FE9B2A801A9B00FD64E4 /* LandingPage */,
@@ -277,6 +280,14 @@
 				CA2941802A7BE3F4007AE12C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA2B68F62A83B21700451C68 /* PreviaReceita */ = {
+			isa = PBXGroup;
+			children = (
+				CA2B68F72A83B23D00451C68 /* PreviaReceitaView.swift */,
+			);
+			path = PreviaReceita;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -375,6 +386,7 @@
 				CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */,
 				0D15FEC22A8036FB00FD64E4 /* APICaller.swift in Sources */,
 				0D15FEB42A801EB200FD64E4 /* Cadastro.swift in Sources */,
+				CA2B68F82A83B23D00451C68 /* PreviaReceitaView.swift in Sources */,
 				0D15FEB22A801EB200FD64E4 /* CadastroView.swift in Sources */,
 				0D15FECD2A812B5600FD64E4 /* FoodCard.swift in Sources */,
 				0D6337182A7C34D400EE9699 /* ReceitinhaButtonViewModel.swift in Sources */,
