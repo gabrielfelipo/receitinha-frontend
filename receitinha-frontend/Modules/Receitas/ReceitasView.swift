@@ -10,7 +10,6 @@ import SwiftUI
 struct ReceitasView: View {
     
     @ObservedObject private var viewModel = ReceitasViewModel()
-    @State private var searchText = ""
     
     var body: some View {
         NavigationView {
@@ -21,14 +20,18 @@ struct ReceitasView: View {
             .background(.white)
             .navigationTitle(Text("Escolher Receita"))
             .navigationBarTitleDisplayMode(.large)
+        }.task {
+            await viewModel.getReceitas()
         }
     }
     
     private var cards: some View {
         ScrollView {
-            ForEach(1...4, id: \.self){ _ in
-                FoodCard(spacing: 16)
+            ForEach(viewModel.receitas, id: \.id){ receita in
+                FoodCard(receita: receita, spacing: 16)
             }
+            
+            
         }
         .padding(.top, 16)
     }
