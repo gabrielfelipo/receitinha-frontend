@@ -19,7 +19,6 @@ struct ProcurarReceitaView: View {
                 
                 List {
                     ForEach(viewModel.receitas, id: \.id) { receita in
-                        
                         VStackLayout(alignment: .center){
                             Text(receita.titulo)
                         }
