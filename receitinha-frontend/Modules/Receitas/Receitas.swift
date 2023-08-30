@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct Receitas: Identifiable, Decodable, Equatable {
+struct Receitas: Identifiable, Codable, Equatable {
     let id: String;
     let titulo: String;
     let duracao: String;
@@ -19,12 +19,12 @@ struct Receitas: Identifiable, Decodable, Equatable {
     let imagem: String;
 }
 
-struct GetReceitas: Decodable {
+struct GetReceitas: Codable {
     
     let data: ReceitasInternas
 }
 
-struct ReceitasInternas: Decodable {
+struct ReceitasInternas: Codable {
     
     let receitas: [Receitas]
     

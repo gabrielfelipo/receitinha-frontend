@@ -24,7 +24,15 @@ struct ReceitasView: View {
             .navigationBarTitleDisplayMode(.large)
         }
         .task {
-            await viewModel.getReceitas()
+//            await viewModel.getReceitas()
+            let response = await viewModel.getRecipes()
+            switch response {
+            case .success(let receitas):
+                viewModel.receitas = receitas.data.receitas
+                viewModel.isSomethingWrong = false
+            case .failure:
+                viewModel.isSomethingWrong = true
+            }
         }
     }
     
