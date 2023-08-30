@@ -21,6 +21,15 @@ struct AchievementView: View {
             .background(.white)
             .navigationTitle(Text("Conquistas"))
             .navigationBarTitleDisplayMode(.large)
+        }.onChange(of: viewModel.conquistasIds, perform: { conquistasIds in
+            Task{
+                for id in conquistasIds {
+                    await viewModel.getConquista(conquistaId: id)
+                }
+            }
+        })
+        .task {
+            await viewModel.getUser()
         }
     }
     
