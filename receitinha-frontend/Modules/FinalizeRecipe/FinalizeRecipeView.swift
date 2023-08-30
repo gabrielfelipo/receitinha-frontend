@@ -10,13 +10,16 @@ import SwiftUI
 
 struct FinalizeRecipeView: View {
 
+    let receita: Receitas
     @ObservedObject private var viewModel = FinalizeRecipeViewModel()
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         ZStack {
             contentView
         }
         .background(Color(AssetColor.blue_100))
+        .navigationBarBackButtonHidden()
     }
     
     private var contentView: some View {
@@ -35,6 +38,9 @@ struct FinalizeRecipeView: View {
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Finalizar Receita"){
+                
+                presentationMode.wrappedValue.dismiss()
+                
             }
         }
     }
@@ -65,6 +71,6 @@ struct FinalizeRecipeView: View {
 
 struct FinalizeRecipe_Previews: PreviewProvider {
     static var previews: some View {
-        FinalizeRecipeView()
+        FinalizeRecipeView(receita:  Receitas(id: "1", titulo: "Banana pica", duracao: "1 minuto", descricao: "bananao", dificuldade: "dificil", ingredientes: ["1 colher", "1 banana"], passos: "corte banana", imagem: "a"))
     }
 }
