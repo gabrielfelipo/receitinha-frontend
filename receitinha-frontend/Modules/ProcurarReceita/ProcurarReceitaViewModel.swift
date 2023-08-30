@@ -17,7 +17,7 @@ final class ProcurarReceitaViewModel: ObservableObject {
     @Published var receitas: [Receita] = []
     
     @Published var somethingGoWrong = false
-    
+
     private var url: URL = APIBuilder()
                                 .routeTo(.receitas_externas)
                                 .build()
