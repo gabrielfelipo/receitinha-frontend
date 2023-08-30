@@ -11,17 +11,18 @@ import SwiftUI
 struct ProcurarReceitaView: View {
 
     @ObservedObject private var viewModel = ProcurarReceitaViewModel()
-    
+
     var body: some View {
         NavigationView {
             ZStack {
                 Color("blue-100")
-                
                 List {
                     ForEach(viewModel.receitas, id: \.id) { receita in
-                        
-                        VStackLayout(alignment: .center){
-                            Text(receita.titulo)
+                        VStackLayout(alignment: .center) {
+                            NavigationLink(destination: PreviaReceitaExternaView(receita: Receita(id: receita.id, titulo: receita.titulo, passos: receita.passos, ingredientes: receita.ingredientes))) {
+                                               Text(receita.titulo)
+                                            }
+                            
                         }
                     }
                 }.onChange(of: viewModel.searchText){ name in

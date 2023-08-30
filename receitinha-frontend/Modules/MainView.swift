@@ -11,7 +11,6 @@ struct MainView: View {
     var body: some View {
         
         TabView {
-            
             AchievementView()
                 .tabItem {
                     Label("Conquistas", systemImage: "rosette")

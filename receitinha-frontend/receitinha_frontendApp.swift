@@ -18,6 +18,18 @@ struct receitinha_frontendApp: App {
                     
                     if AuthManager.shared.isAuth && AuthManager.shared.dontExpiringIn {
                         MainView()
+                            .navigationDestination(for: Route.self){ destination in
+                                switch destination {
+                                case .login:
+                                    LoginView()
+                                case .cadastro:
+                                    CadastroView()
+                             
+                                case .tab:
+                                    MainView()
+                                        .navigationBarBackButtonHidden(true)
+                                }
+                            }
                     } else {
                         LandingPage()
                             .navigationDestination(for: Route.self){ destination in
@@ -26,6 +38,7 @@ struct receitinha_frontendApp: App {
                                     LoginView()
                                 case .cadastro:
                                     CadastroView()
+                          
                                 case .tab:
                                     MainView()
                                         .navigationBarBackButtonHidden(true)
