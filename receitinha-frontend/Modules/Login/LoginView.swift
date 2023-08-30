@@ -47,8 +47,15 @@ struct LoginView: View {
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Login"){
-                viewModel.authenticate()
-                coordinator.goToHome()
+                Task {
+                    let response = await viewModel.authenticate()
+                    switch response {
+                    case.success:
+                        print("deu bom")
+                    case .failure:
+                        print("deu ruim")
+                    }
+                }
             }
 
             Spacer()

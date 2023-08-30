@@ -11,6 +11,7 @@ enum EndPoint: String {
     
     case receitas_externas = "receitas-externas?"
     case cadastrar_usuario = "cadastrar-usuario"
+    case login = "login"
 }
 
 
