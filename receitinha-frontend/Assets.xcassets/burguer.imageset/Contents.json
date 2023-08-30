@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Burger 1.png",
+      "filename" : "misto_bloq.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Burger 1@2x.png",
+      "filename" : "misto_bloq@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Burger 1@3x.png",
+      "filename" : "misto_bloq@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

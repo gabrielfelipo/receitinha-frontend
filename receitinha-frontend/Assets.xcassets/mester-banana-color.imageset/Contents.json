@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Banana 2.png",
+      "filename" : "mestreBanana_Color.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Banana 2@2x.png",
+      "filename" : "mestreBanana_Color@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Banana 2@3x.png",
+      "filename" : "mestreBanana_Color@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
