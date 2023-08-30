@@ -11,17 +11,14 @@ import SwiftUI
 struct receitinha_frontendApp: App {
     
     @ObservedObject var coordinator = ViewCordinator()
-    @StateObject var loginManager = LoginManager()
-    
     
     var body: some Scene {
         WindowGroup {
                 NavigationStack(path: $coordinator.path){
                     
-                    if loginManager.isLoggedIn {
+                    if AuthManager.shared.isAuth && AuthManager.shared.dontExpiringIn {
                         MainView()
                     } else {
-                        
                         LandingPage()
                             .navigationDestination(for: Route.self){ destination in
                                 switch destination {
@@ -37,7 +34,7 @@ struct receitinha_frontendApp: App {
                     }
                 }
                 .environmentObject(coordinator)
-                .environmentObject(loginManager)
+                
             
         }
     }

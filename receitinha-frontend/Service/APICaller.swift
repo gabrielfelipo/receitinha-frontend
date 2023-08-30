@@ -22,6 +22,10 @@ enum APICallerStatus {
 
 class APICaller {
     
+    private var token: String {
+        return UserDefaults.standard.string(forKey: "token") ?? ""
+    }
+    
     func createRequest(with url: URL, and method: HttpMethod, body data: Data) -> URLRequest {
         var request = URLRequest(url: url)
 
