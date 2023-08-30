@@ -22,18 +22,17 @@ final class CadastroViewModel: ObservableObject {
     @Published var isSomethingWrong = false
     @Published var isCadastroCompleto = false
     
-    func cadastrarUsuario(){
+    func cadastrarUsuario() async -> Result<CadastroResponseData, APICallerError> {
         
         let usuario = Cadastro(nome: nome, email: email, senha: senha)
         let api = APIBuilder().routeTo(.cadastrar_usuario).build()
         
-        guard let jsonData = try? JSONEncoder().encode(usuario) else { return }
+        guard let jsonData = try? JSONEncoder().encode(usuario) else { return .failure(.errorInCall) }
     
         let request = caller.createRequest(with: api, and: .post, body: jsonData)
-        
-        Task {
-            await caller.peform(request)
-        }
     
+        
+        let response = await caller.peform(request, expecting: CadastroResponseData.self)
+        return response
     }
 }

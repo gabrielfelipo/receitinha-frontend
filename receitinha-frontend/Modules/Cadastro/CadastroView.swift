@@ -38,7 +38,7 @@ struct CadastroView: View {
     }
        
     var body: some View {
-            
+        
         VStack {
             
             Spacer()
@@ -47,13 +47,22 @@ struct CadastroView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 140)
-        
+            
             forms
             
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Cadastrar"){
-                viewModel.cadastrarUsuario()
+                
+                Task {
+                    let response = await viewModel.cadastrarUsuario()
+                    switch response {
+                    case .success:
+                        coordinator.pop()
+                    case .failure:
+                        viewModel.isSomethingWrong = true
+                    }
+                }
             }
             
             Spacer()
@@ -62,6 +71,9 @@ struct CadastroView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(AssetColor.blue_100))
+        .alert("Problema no cadastro",
+               isPresented: $viewModel.isSomethingWrong){}
+        
     }
 
 }
