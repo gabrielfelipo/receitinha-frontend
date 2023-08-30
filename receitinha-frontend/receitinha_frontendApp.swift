@@ -11,17 +11,26 @@ import SwiftUI
 struct receitinha_frontendApp: App {
     
     @ObservedObject var coordinator = ViewCordinator()
-    @StateObject var loginManager = LoginManager()
-    
     
     var body: some Scene {
         WindowGroup {
                 NavigationStack(path: $coordinator.path){
                     
-                    if loginManager.isLoggedIn {
+                    if AuthManager.shared.isAuth && AuthManager.shared.dontExpiringIn {
                         MainView()
+                            .navigationDestination(for: Route.self){ destination in
+                                switch destination {
+                                case .login:
+                                    LoginView()
+                                case .cadastro:
+                                    CadastroView()
+                             
+                                case .tab:
+                                    MainView()
+                                        .navigationBarBackButtonHidden(true)
+                                }
+                            }
                     } else {
-                        
                         LandingPage()
                             .navigationDestination(for: Route.self){ destination in
                                 switch destination {
@@ -29,6 +38,7 @@ struct receitinha_frontendApp: App {
                                     LoginView()
                                 case .cadastro:
                                     CadastroView()
+                          
                                 case .tab:
                                     MainView()
                                         .navigationBarBackButtonHidden(true)
@@ -37,7 +47,7 @@ struct receitinha_frontendApp: App {
                     }
                 }
                 .environmentObject(coordinator)
-                .environmentObject(loginManager)
+                
             
         }
     }

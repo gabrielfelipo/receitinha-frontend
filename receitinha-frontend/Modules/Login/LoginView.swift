@@ -47,8 +47,19 @@ struct LoginView: View {
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Login"){
-                viewModel.authenticate()
-                coordinator.goToHome()
+                Task {
+                    let response = await viewModel.authenticate()
+                    switch response {
+                    case .success(let usuario):
+                        UserDefaults.standard.setValue(usuario.data.token, forKey: "token")
+                        UserDefaults.standard.setValue(usuario.data.expiresIn, forKey: "expiresIn")
+                        AuthManager.shared.authenticated()
+                        coordinator.goToHome()
+                    case .failure:
+                        viewModel.isSomethingWrong = true
+                        
+                    }
+                }
             }
 
             Spacer()
@@ -57,6 +68,7 @@ struct LoginView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(AssetColor.blue_100))
+        .alert("Falha na autenticação", isPresented: $viewModel.isSomethingWrong){}
     }
 
 }

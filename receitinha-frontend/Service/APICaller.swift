@@ -22,6 +22,9 @@ enum APICallerStatus {
 
 class APICaller {
     
+    private var token: String {
+        return UserDefaults.standard.string(forKey: "token") ?? ""
+    }
     
     func createRequest(with url: URL, and method: HttpMethod, body data: Data) -> URLRequest {
         var request = URLRequest(url: url)
@@ -29,17 +32,40 @@ class APICaller {
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = data
-        
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+    
         return request
     }
     
-    func peform(_ request: URLRequest ) async -> Result<APICallerStatus, APICallerError> {
+    func peform<T: Codable>(_ request: URLRequest, expecting: T.Type) async -> Result<T, APICallerError> {
         do {
-            let (_, _) = try await URLSession.shared.data(for: request)
-            return .success(.completed)
+            let (data , response) = try await URLSession.shared.data(for: request)
+            
+            guard let status = response.getStatusCode() else { return .failure(.errorInCall) }
+            
+            let serverError = (300..<600).contains(status)
+            
+            if(serverError) { return .failure(.errorInCall) }
+            
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+            let dataDecoded = try decoder.decode(expecting, from: data)
+            return .success(dataDecoded)
         } catch {
+            print(error)
             return .failure(APICallerError.errorInCall)
         }
         
+    }
+}
+
+extension URLResponse {
+
+    func getStatusCode() -> Int? {
+        if let httpResponse = self as? HTTPURLResponse {
+            return httpResponse.statusCode
+        }
+        return nil
     }
 }
