@@ -42,6 +42,8 @@
 		0DF4105D2A83B71300A10405 /* AchievementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4105A2A83B71300A10405 /* AchievementViewModel.swift */; };
 		0DF4105E2A83B71300A10405 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF4105B2A83B71300A10405 /* Achievement.swift */; };
 		0DF410612A83BAB200A10405 /* AchievementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF410602A83BAB200A10405 /* AchievementCard.swift */; };
+		BFCDE1812A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE1802A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift */; };
+		BFCDE1832A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE1822A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift */; };
 		CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */; };
 		CA29417C2A7BE3F4007AE12C /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */; };
 		CA29417E2A7BE3F4007AE12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA29417D2A7BE3F4007AE12C /* Assets.xcassets */; };
@@ -85,6 +87,8 @@
 		0DF4105A2A83B71300A10405 /* AchievementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementViewModel.swift; sourceTree = "<group>"; };
 		0DF4105B2A83B71300A10405 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
 		0DF410602A83BAB200A10405 /* AchievementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCard.swift; sourceTree = "<group>"; };
+		BFCDE1802A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviaReceitaExternaView.swift; sourceTree = "<group>"; };
+		BFCDE1822A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviaReceitaExternaViewModel.swift; sourceTree = "<group>"; };
 		CA2941762A7BE3F4007AE12C /* receitinha-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "receitinha-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receitinha_frontendApp.swift; sourceTree = "<group>"; };
 		CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,7 @@
 		0D63370E2A7BECDA00EE9699 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BFCDE17F2A9ECD1D00CFCA95 /* PreveitaReceitaExternaView */,
 				CA2B68F62A83B21700451C68 /* PreviaReceita */,
 				0DA74C552A8F9BB30021EC40 /* FinalizeRecipe */,
 				0DF410582A83B6FB00A10405 /* Achievement */,
@@ -283,6 +288,15 @@
 				0DF410602A83BAB200A10405 /* AchievementCard.swift */,
 			);
 			path = AchievementCard;
+			sourceTree = "<group>";
+		};
+		BFCDE17F2A9ECD1D00CFCA95 /* PreveitaReceitaExternaView */ = {
+			isa = PBXGroup;
+			children = (
+				BFCDE1802A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift */,
+				BFCDE1822A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift */,
+			);
+			path = PreveitaReceitaExternaView;
 			sourceTree = "<group>";
 		};
 		CA29416D2A7BE3F3007AE12C = {
@@ -415,8 +429,10 @@
 				0D63372D2A7CAFC500EE9699 /* ReceitasViewModel.swift in Sources */,
 				0D15FEA52A801D6100FD64E4 /* ViewCordinator.swift in Sources */,
 				0D15FEA82A801D7B00FD64E4 /* Route.swift in Sources */,
+				BFCDE1812A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift in Sources */,
 				0DA74C5A2A8F9BD20021EC40 /* FinalizeRecipeViewModel.swift in Sources */,
 				0D6337232A7CAEDC00EE9699 /* MainView.swift in Sources */,
+				BFCDE1832A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift in Sources */,
 				0DF4105D2A83B71300A10405 /* AchievementViewModel.swift in Sources */,
 				0D15FEBB2A8020F500FD64E4 /* LabelContent.swift in Sources */,
 				0DA74C592A8F9BD20021EC40 /* FinalizeRecipeView.swift in Sources */,
