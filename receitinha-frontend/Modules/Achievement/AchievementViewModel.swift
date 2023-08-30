@@ -27,7 +27,7 @@ final class AchievementViewModel: ObservableObject {
     @Published var achievements: [Achievement] = [
         Achievement(image: AssetImage.banana, name: "Mestre Banana", avaiable: .blocked),
         Achievement(image: AssetImage.banana_split, name: "Mestre Split", avaiable: .blocked),
-        Achievement(image: AssetImage.burguer, name: "Mestre Burguer", avaiable: .blocked),
+        Achievement(image: AssetImage.burguer, name: "Esquentou!!!", avaiable: .blocked),
         Achievement(image: AssetImage.ice, name: "Mestre Ice", avaiable: .blocked),
         Achievement(image: AssetImage.cookies, name: "Mestre Cookie", avaiable: .blocked),
         Achievement(image: AssetImage.muffin, name: "Mestre Muffin", avaiable: .blocked)
@@ -51,5 +51,13 @@ final class AchievementViewModel: ObservableObject {
         let request = caller.createRequest(with: api, and: .get)
         let response = await caller.peform(request, expecting: GetConquista.self)
         return response
+    }
+    
+    func changeConquista(name: String) {
+        for (ind, achievement) in achievements.enumerated() {
+            if achievement.name == name {
+                achievements[ind] = Achievement(image: "\(achievement.image)-color", name: achievement.name, avaiable: .completed)
+            }
+        }
     }
 }

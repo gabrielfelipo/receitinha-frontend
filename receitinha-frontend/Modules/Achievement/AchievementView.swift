@@ -27,7 +27,7 @@ struct AchievementView: View {
                     let response = await viewModel.getConquista(conquistaId: id)
                     switch response {
                     case .success(let conquista):
-                        print(conquista.data.conquista.titulo)
+                        viewModel.changeConquista(name: conquista.data.conquista.titulo)
                     case .failure:
                         viewModel.isSomethingWrong = true
                     }
@@ -36,7 +36,6 @@ struct AchievementView: View {
 
         })
         .task {
-            print(viewModel.userId)
             let response = await viewModel.getUser()
             switch response {
             case .success(let user):
