@@ -10,6 +10,7 @@ import Foundation
 struct AssetColor {
     static let blue_100 = "blue-100"
     static let dark_gray = "gray-800"
+    static let blue_details = "blue-details"
     static let gray_500 = "gray-500"
     static let yellow_600 = "yellow-600"
 }
