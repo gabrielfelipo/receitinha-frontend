@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FoodCard: View {
+    let receita: Receitas
     
     let spacing: CGFloat
     
@@ -35,7 +36,8 @@ struct FoodCard: View {
     
     private var imageAndDetails: some View {
         HStack(spacing: 8) {
-            Image("comida")
+            AsyncImage(url: URL(string: receita.imagem))
+            { phase in switch phase { case .failure: Image("comida") .font(.largeTitle) case .success(let image): image .resizable() default: ProgressView() } } .frame(width: 144, height: 104) .clipShape(RoundedRectangle(cornerRadius: 16))
             details
             Spacer()
         }
@@ -45,13 +47,13 @@ struct FoodCard: View {
     
     private var details: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Misto quente")
+            Text(receita.titulo)
                 .fontWeight(.bold)
                 .font(.title3)
             
             VStack(alignment: .leading) {
-                createDetailsText("Duração: 10 minutos")
-                createDetailsText("Dificuldade: Fácil")
+                createDetailsText("Duração: \(receita.duracao)")
+                createDetailsText("Dificuldade: \(receita.dificuldade)")
             }
             Spacer()
         }

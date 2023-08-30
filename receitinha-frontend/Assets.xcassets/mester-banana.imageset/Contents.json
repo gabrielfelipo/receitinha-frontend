@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Muffin 1.png",
+      "filename" : "mestreBanana_Color.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Muffin 1@2x.png",
+      "filename" : "mestreBanana_Color@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Muffin 1@3x.png",
+      "filename" : "mestreBanana_Color@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

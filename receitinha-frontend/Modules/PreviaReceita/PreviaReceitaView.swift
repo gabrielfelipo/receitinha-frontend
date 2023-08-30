@@ -46,7 +46,7 @@ struct PreviaReceitaView: View {
     }
     
     private var imageFood: some View {
-        Image("muffin")
+        Image("comida")
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(height: 200)

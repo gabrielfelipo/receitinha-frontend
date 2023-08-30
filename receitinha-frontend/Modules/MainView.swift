@@ -11,7 +11,14 @@ struct MainView: View {
     var body: some View {
         
         TabView {
-            PreviaReceitaView()
+            
+            AchievementView()
+                .tabItem {
+                    Label("Conquistas", systemImage: "rosette")
+                }
+            
+            
+            ReceitasView()
                 .tabItem {
                     Label("Receitas", systemImage: "fork.knife")
                 }

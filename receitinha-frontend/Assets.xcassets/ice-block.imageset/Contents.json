@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Muffin 1.png",
+      "filename" : "Ice block 1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Muffin 1@2x.png",
+      "filename" : "Ice block 1@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Muffin 1@3x.png",
+      "filename" : "Ice block 1@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
