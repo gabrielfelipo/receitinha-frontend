@@ -8,23 +8,27 @@
 import SwiftUI
 
 struct PreviaReceitaView: View {
-    var ingredientsList = ["colher", "pao", "faca"]
+    
+    let receita : Receitas
+    @Environment(\.presentationMode) var presentationMode
+    @State var root = false
+    @EnvironmentObject var coordinator: ViewCordinator
     
     var body: some View {
-        VStack{
-            ZStack(alignment: .leading) {
-                Color(.white)
-                Text("Banana com Nescau")
-                    .bold()
-                    .font(.title)
-                    .padding(.leading, 16)
-            }.frame(height: 48)
-            ZStack {
-                Color(AssetColor.blue_100)
-                detalhesVStack
-            }.ignoresSafeArea()
-            //            .navigationTitle("Banana com Nescau")
+        ZStack {
+            Color(AssetColor.blue_100)
+            //                    .ignoresSafeArea()
+            detalhesVStack
         }
+        .onAppear(){
+            if root == true {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
+        .background(ignoresSafeAreaEdges: .top)
+        .background(Color(AssetColor.blue_100))
+        .navigationTitle(receita.titulo).font(.title)
+        .navigationBarTitleDisplayMode(.large)
     }
     
     private var detalhesVStack: some View {
@@ -39,23 +43,66 @@ struct PreviaReceitaView: View {
                 recipeDescription
                 bar
                 ingredientsTitle
+                buttonToFinalize
+                
                 Spacer()
             }
             .padding(16)
         }
     }
     
+    private var buttonToFinalize: some View {
+        NavigationLink(destination: FinalizeRecipeView(receita: receita)) {
+            ZStack {
+                Rectangle()
+                    .frame(height: 58)
+                    .foregroundColor(.blue)
+                    .cornerRadius(25)
+                    .onAppear(){
+                        root = true
+                    }
+                
+                Text("Iniciar a receita")
+                    .font(.system(size: 17))
+                    .bold()
+                    .foregroundColor(.white)
+            }
+        }
+    }
+    
     private var imageFood: some View {
-        Image("comida")
+        
+        AsyncImage(url: URL(string: receita.imagem))
+        { phase in switch phase { case .failure: imageDefault  case .success(let image): image
             .resizable()
             .aspectRatio(contentMode: .fill)
+            default: ProgressView() } }
             .frame(height: 200)
-            .cornerRadius(16)
-            .overlay(
-                RoundedRectangle(cornerRadius: 16)
-                    .stroke(.gray, lineWidth: 1)
-            )
-            .padding([.leading,.trailing], 8)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+        
+//        Image(receita.imagem)
+//            .resizable()
+//            .aspectRatio(contentMode: .fill)
+//            .frame(height: 200)
+//            .cornerRadius(16)
+//            .overlay(
+//                RoundedRectangle(cornerRadius: 16)
+//                    .stroke(.gray, lineWidth: 1)
+//            )
+//            .padding([.leading,.trailing], 8)
+    }
+    
+    private var imageDefault: some View {
+        Image("comida")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 200)
+                    .cornerRadius(16)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(.gray, lineWidth: 1)
+                    )
+                    .padding([.leading,.trailing], 8)
     }
     
     private var timeDetailsCard: some View {
@@ -89,12 +136,14 @@ struct PreviaReceitaView: View {
             Image("dificult")
                 .resizable()
                 .frame(width: 67,height: 51)
-                .foregroundColor(Color(red: 0.11, green: 0.29, blue: 0.40, opacity: 1.00))
-                .bold()
             
             Text("Dificuldade")
+                .foregroundColor(Color(red: 0.11, green: 0.29, blue: 0.40, opacity: 1.00))
+                .font(.system(size: 17))
             
-            Text("Médio")
+            Text(receita.dificuldade)
+                .foregroundColor(Color(red: 0.11, green: 0.29, blue: 0.40, opacity: 1.00))
+                .font(.system(size: 17))
                 .bold()
         }
     }
@@ -108,9 +157,13 @@ struct PreviaReceitaView: View {
                 .bold()
             
             Text("Duração")
+                .foregroundColor(Color(red: 0.11, green: 0.29, blue: 0.40, opacity: 1.00))
+                .font(.system(size: 17))
             
-            Text("10 minutos")
+            Text(receita.duracao)
+                .foregroundColor(Color(red: 0.11, green: 0.29, blue: 0.40, opacity: 1.00))
                 .bold()
+                .font(.system(size: 17))
         }
     }
     
@@ -120,7 +173,8 @@ struct PreviaReceitaView: View {
     }
     
     private var recipeDescription: some View {
-        Text("Essa é uma receita de uma deliciosa banana com leite em pó, Nescau e farinha láctea. Um lanche prático, rápido e muito divertido de fazer!! ")
+        Text(receita.descricao)
+            .font(.system(size: 17))
     }
     
     private var ingredientsTitle: some View {
@@ -137,7 +191,7 @@ struct PreviaReceitaView: View {
     
     private var ingredients: some View {
         VStack(alignment: .leading) {
-            ForEach(ingredientsList, id: \.self) { ingredient in
+            ForEach(receita.ingredientes, id: \.self) { ingredient in
                 Text(" • " + ingredient)
                     .font(.system(size: 17))
                     .frame(maxWidth: .infinity,
@@ -150,6 +204,6 @@ struct PreviaReceitaView: View {
 
 struct PreviaReceitaView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviaReceitaView()
+        PreviaReceitaView(receita: Receitas(id: "1", titulo: "Banana pica", duracao: "1 minuto", descricao: "bananao", dificuldade: "dificil", ingredientes: ["1 colher", "1 banana"], passos: "corte banana", imagem: "a"))
     }
 }
