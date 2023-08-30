@@ -21,7 +21,16 @@ final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var senha: String = ""
     
-    func authenticate() {
-        AuthManager.shared.authenticated()
+    @Published var isSomethingWrong = false
+    
+    private var caller = APICaller()
+    
+    func authenticate() async -> Result<LoginResponseData, APICallerError> {
+        let login =  Login(email: email, senha: senha)
+        let api = APIBuilder().routeTo(.login).build()
+        guard let jsonData = try? JSONEncoder().encode(login) else { return .failure(.errorInCall) }
+        let request = caller.createRequest(with: api, and: .post, body: jsonData)
+        let response = await caller.peform(request, expecting: LoginResponseData.self)
+        return response
     }
 }

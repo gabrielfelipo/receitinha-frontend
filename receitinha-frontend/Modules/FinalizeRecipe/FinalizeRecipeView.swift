@@ -35,7 +35,6 @@ struct FinalizeRecipeView: View {
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Finalizar Receita"){
-                print("oi")
             }
         }
     }

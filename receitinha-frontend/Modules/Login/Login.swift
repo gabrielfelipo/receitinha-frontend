@@ -8,9 +8,19 @@
 
 import SwiftUI
 
-struct Login {
+struct Login: Codable {
     
     let email: String
     let senha: String
+}
+
+struct LoginResponseData: Codable {
     
+    let data: LoginResponse
+}
+
+struct LoginResponse: Codable {
+    
+    let token: String
+    let expiresIn: Int
 }
