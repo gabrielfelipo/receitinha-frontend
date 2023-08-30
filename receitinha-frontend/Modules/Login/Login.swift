@@ -14,3 +14,8 @@ struct Login {
     let senha: String
     
 }
+
+struct LoginResponseData {
+    
+    
+}

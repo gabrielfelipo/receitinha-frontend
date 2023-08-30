@@ -33,7 +33,6 @@ struct CadastroView: View {
                             text: $viewModel.senha,
                             style: .secure,
                             spacing: 16)
-        
         Spacer()
     }
        
@@ -67,15 +66,12 @@ struct CadastroView: View {
             
             Spacer()
                 .frame(height: 16)
-            
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(AssetColor.blue_100))
         .alert("Problema no cadastro",
                isPresented: $viewModel.isSomethingWrong){}
-        
     }
-
 }
 
 struct Cadastro_Previews: PreviewProvider {
