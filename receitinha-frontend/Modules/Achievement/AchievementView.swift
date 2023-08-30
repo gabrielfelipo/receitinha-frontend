@@ -22,14 +22,22 @@ struct AchievementView: View {
             .navigationTitle(Text("Conquistas"))
             .navigationBarTitleDisplayMode(.large)
         }.onChange(of: viewModel.conquistasIds, perform: { conquistasIds in
-            Task{
-                for id in conquistasIds {
-                    await viewModel.getConquista(conquistaId: id)
-                }
-            }
+//            Task{
+//                for id in conquistasIds {
+//                    await viewModel.getConquista(conquistaId: id)
+//                }
+//            }
+            print(conquistasIds)
+
         })
         .task {
-            await viewModel.getUser()
+            let response = await viewModel.getUser()
+            switch response {
+            case .success(let user):
+                viewModel.conquistasIds = user.data.usuario.conquistas
+            case .failure:
+                viewModel.isSomethingWrong = true
+            }
         }
     }
     

@@ -24,7 +24,6 @@
 		0D15FEBE2A80253800FD64E4 /* ReceitinhaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEBD2A80253800FD64E4 /* ReceitinhaTextField.swift */; };
 		0D15FEC22A8036FB00FD64E4 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC12A8036FB00FD64E4 /* APICaller.swift */; };
 		0D15FEC62A80772100FD64E4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC52A80772100FD64E4 /* AuthManager.swift */; };
-		0D15FECA2A8128FC00FD64E4 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FEC92A8128FC00FD64E4 /* LoginManager.swift */; };
 		0D15FECD2A812B5600FD64E4 /* FoodCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15FECC2A812B5600FD64E4 /* FoodCard.swift */; };
 		0D6337132A7BEE8300EE9699 /* ReceitinhaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */; };
 		0D6337162A7C34B700EE9699 /* ReceitinhaButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */; };
@@ -71,7 +70,6 @@
 		0D15FEBD2A80253800FD64E4 /* ReceitinhaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaTextField.swift; sourceTree = "<group>"; };
 		0D15FEC12A8036FB00FD64E4 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		0D15FEC52A80772100FD64E4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		0D15FEC92A8128FC00FD64E4 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		0D15FECC2A812B5600FD64E4 /* FoodCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCard.swift; sourceTree = "<group>"; };
 		0D6337122A7BEE8300EE9699 /* ReceitinhaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButton.swift; sourceTree = "<group>"; };
 		0D6337152A7C34B700EE9699 /* ReceitinhaButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitinhaButtonType.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				0D15FEC52A80772100FD64E4 /* AuthManager.swift */,
-				0D15FEC92A8128FC00FD64E4 /* LoginManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -457,7 +454,6 @@
 				0D15FEB32A801EB200FD64E4 /* CadastroViewModel.swift in Sources */,
 				0D15FEB92A80208E00FD64E4 /* AssetColor.swift in Sources */,
 				0DF410612A83BAB200A10405 /* AchievementCard.swift in Sources */,
-				0D15FECA2A8128FC00FD64E4 /* LoginManager.swift in Sources */,
 				CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */,
 				0D15FEC22A8036FB00FD64E4 /* APICaller.swift in Sources */,
 				0D15FEB42A801EB200FD64E4 /* Cadastro.swift in Sources */,

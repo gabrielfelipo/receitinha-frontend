@@ -54,7 +54,6 @@ struct ReceitinhaButton_Previews: PreviewProvider {
                          style: .primary,
                          title: "opa",
                          userTap: {
-            print("oi")
         })
     }
 }

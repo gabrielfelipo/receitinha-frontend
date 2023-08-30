@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-struct User: Identifiable, Decodable, Equatable {
-    let id: String;
-    let nome: String;
-    let email: String;
-    let conquistas: [String];
-}
-
-struct GetUser: Decodable {
+struct GetUser: Codable {
     let data: Usuario
 }
 
-struct Usuario: Decodable {
+struct Usuario: Codable {
     let usuario: User
+}
+struct User: Identifiable, Codable, Equatable {
+    let id: String
+    let nome: String
+    let email: String
+    let conquistas: [String]
 }

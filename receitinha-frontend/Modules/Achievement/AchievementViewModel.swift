@@ -19,8 +19,9 @@ final class AchievementViewModel: ObservableObject {
     private var urlConquista: URL = APIBuilder()
                                 .routeTo(.get_conquista)
                                 .build()
-                                
-    @Published var somethingGoWrong = false
+    private var caller = APICaller()
+
+    @Published var isSomethingWrong = false
     @Published var conquistasIds: [String] = []
     @Published var conquistas: [Conquista] = []
     
@@ -37,28 +38,14 @@ final class AchievementViewModel: ObservableObject {
         Achievement(image: AssetImage.muffin, name: "Mestre Muffin", avaiable: .blocked)
     ]
     
-    func getUser() async {
-        var user_api = urlUser
-        user_api.append(path: userId)
-        URLSession
-            .shared
-            .dataTaskPublisher(for: user_api)
-            .receive(on: DispatchQueue.main)
-            .map(\.data)
-            .decode(type: GetUser.self, decoder: JSONDecoder())
-            .sink { [weak self] response in
-                switch response {
-                case .failure:
-                    self?.conquistasIds = []
-                    print(response)
-                    self?.somethingGoWrong = true
-                default:
-                    self?.somethingGoWrong = false
-                }
-            } receiveValue: { [weak self] usuario in
-                self?.conquistasIds = usuario.data.usuario.conquistas
-            }
-            .store(in: &bag)
+    func getUser() async -> Result<GetUser, APICallerError> {
+        var api = APIBuilder()
+            .routeTo(.get_user)
+            .build()
+        api.append(path: userId)
+        let request = caller.createRequest(with: api, and: .get)
+        let response = await caller.peform(request, expecting: GetUser.self)
+        return response
     }
     
     func getConquista(conquistaId: String) async {
@@ -75,9 +62,9 @@ final class AchievementViewModel: ObservableObject {
                 switch response {
                 case .failure:
                     print(response)
-                    self?.somethingGoWrong = true
+                    self?.isSomethingWrong = true
                 default:
-                    self?.somethingGoWrong = false
+                    self?.isSomethingWrong = false
                 }
             } receiveValue: { [weak self] conquista in
                 self?.conquistas.append(conquista.data.conquista)
