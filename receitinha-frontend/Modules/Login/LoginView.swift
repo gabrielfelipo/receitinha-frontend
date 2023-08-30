@@ -51,8 +51,9 @@ struct LoginView: View {
                     let response = await viewModel.authenticate()
                     switch response {
                     case .success(let usuario):
-                        UserDefaults.standard.setValue(usuario.data.token, forKey: "token")
-                        UserDefaults.standard.setValue(usuario.data.expiresIn, forKey: "expiresIn")
+                        UserDefaults.standard.setValue(usuario.data.token.token, forKey: "token")
+                        UserDefaults.standard.setValue(usuario.data.id, forKey: "userId")
+                        UserDefaults.standard.setValue(usuario.data.token.expiresIn, forKey: "expiresIn")
                         AuthManager.shared.authenticated()
                         coordinator.goToHome()
                     case .failure:

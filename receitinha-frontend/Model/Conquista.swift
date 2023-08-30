@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Conquista: Identifiable, Decodable, Equatable {
+struct Conquista: Identifiable, Codable, Equatable {
     let id: String;
     let titulo: String;
     let imagemBloqueada: String;
@@ -15,11 +15,11 @@ struct Conquista: Identifiable, Decodable, Equatable {
     let receitaId: String;
 }
 
-struct GetConquista: Decodable {
+struct GetConquista: Codable {
     let data: ConquistaObject
 }
 
-struct ConquistaObject: Decodable {
+struct ConquistaObject: Codable {
     let conquista: Conquista
 }
 
