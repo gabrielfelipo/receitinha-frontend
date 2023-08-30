@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-struct ProcurarReceita: Decodable {
+struct ProcurarReceita: Codable {
     
     let data: ReceitasProcuradas
 }
 
-struct ReceitasProcuradas: Decodable {
+struct ReceitasProcuradas: Codable {
     
     let receitas: [Receita]
     

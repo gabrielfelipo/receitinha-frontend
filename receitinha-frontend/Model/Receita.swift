@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Receita: Identifiable, Decodable {
+struct Receita: Identifiable, Codable {
     
     let id: String
     let titulo: String
