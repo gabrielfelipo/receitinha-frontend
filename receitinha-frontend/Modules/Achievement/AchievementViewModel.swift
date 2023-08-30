@@ -13,12 +13,6 @@ import Combine
 
 final class AchievementViewModel: ObservableObject {
     
-    private var urlUser: URL = APIBuilder()
-                                .routeTo(.get_user)
-                                .build()
-    private var urlConquista: URL = APIBuilder()
-                                .routeTo(.get_conquista)
-                                .build()
     private var caller = APICaller()
 
     @Published var isSomethingWrong = false
