@@ -13,6 +13,8 @@ enum EndPoint: String {
     case cadastrar_usuario = "cadastrar-usuario"
     case login = "login"
     case receitas = "receitas"
+    case get_user = "usuario/"
+    case get_conquista = "get-conquista/"
 }
 
 

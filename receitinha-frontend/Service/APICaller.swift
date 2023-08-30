@@ -9,6 +9,7 @@ import Foundation
 
 enum HttpMethod: String {
     case post = "POST"
+    case get = "GET"
 }
 
 enum APICallerError: Error {
@@ -26,7 +27,7 @@ class APICaller {
         return UserDefaults.standard.string(forKey: "token") ?? ""
     }
     
-    func createRequest(with url: URL, and method: HttpMethod, body data: Data) -> URLRequest {
+    func createRequest(with url: URL, and method: HttpMethod, body data: Data? = nil) -> URLRequest {
         var request = URLRequest(url: url)
 
         request.httpMethod = method.rawValue
@@ -42,14 +43,12 @@ class APICaller {
             let (data , response) = try await URLSession.shared.data(for: request)
             
             guard let status = response.getStatusCode() else { return .failure(.errorInCall) }
-            
             let serverError = (300..<600).contains(status)
-            
             if(serverError) { return .failure(.errorInCall) }
             
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-
+    
             let dataDecoded = try decoder.decode(expecting, from: data)
             return .success(dataDecoded)
         } catch {

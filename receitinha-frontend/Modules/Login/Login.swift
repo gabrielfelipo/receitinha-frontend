@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct Login: Codable {
-    
     let email: String
     let senha: String
 }

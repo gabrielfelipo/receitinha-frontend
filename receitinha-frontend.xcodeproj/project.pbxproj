@@ -43,6 +43,8 @@
 		0DF410612A83BAB200A10405 /* AchievementCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF410602A83BAB200A10405 /* AchievementCard.swift */; };
 		BFCDE1812A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE1802A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift */; };
 		BFCDE1832A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE1822A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift */; };
+		BFCDE1872A9EDF4200CFCA95 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE1862A9EDF4200CFCA95 /* User.swift */; };
+		BFCDE1892A9EE7B900CFCA95 /* Conquista.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCDE1882A9EE7B900CFCA95 /* Conquista.swift */; };
 		CA29417A2A7BE3F4007AE12C /* receitinha_frontendApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */; };
 		CA29417C2A7BE3F4007AE12C /* ReceitasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */; };
 		CA29417E2A7BE3F4007AE12C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA29417D2A7BE3F4007AE12C /* Assets.xcassets */; };
@@ -87,6 +89,8 @@
 		0DF410602A83BAB200A10405 /* AchievementCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementCard.swift; sourceTree = "<group>"; };
 		BFCDE1802A9ECD3300CFCA95 /* PreviaReceitaExternaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviaReceitaExternaView.swift; sourceTree = "<group>"; };
 		BFCDE1822A9ED46400CFCA95 /* PreviaReceitaExternaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviaReceitaExternaViewModel.swift; sourceTree = "<group>"; };
+		BFCDE1862A9EDF4200CFCA95 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BFCDE1882A9EE7B900CFCA95 /* Conquista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conquista.swift; sourceTree = "<group>"; };
 		CA2941762A7BE3F4007AE12C /* receitinha-frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "receitinha-frontend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA2941792A7BE3F4007AE12C /* receitinha_frontendApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = receitinha_frontendApp.swift; sourceTree = "<group>"; };
 		CA29417B2A7BE3F4007AE12C /* ReceitasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceitasView.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				0D15FE992A80099100FD64E4 /* Receita.swift */,
+				BFCDE1862A9EDF4200CFCA95 /* User.swift */,
+				BFCDE1882A9EE7B900CFCA95 /* Conquista.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -434,8 +440,10 @@
 				0D15FEBB2A8020F500FD64E4 /* LabelContent.swift in Sources */,
 				0DA74C592A8F9BD20021EC40 /* FinalizeRecipeView.swift in Sources */,
 				0D63372E2A7CAFC500EE9699 /* Receitas.swift in Sources */,
+				BFCDE1872A9EDF4200CFCA95 /* User.swift in Sources */,
 				0D15FEAD2A801E7D00FD64E4 /* LoginViewModel.swift in Sources */,
 				0D6337282A7CAFAE00EE9699 /* ProcurarReceitaView.swift in Sources */,
+				BFCDE1892A9EE7B900CFCA95 /* Conquista.swift in Sources */,
 				0D63372A2A7CAFAE00EE9699 /* ProcurarReceita.swift in Sources */,
 				0D15FEAC2A801E7D00FD64E4 /* LoginView.swift in Sources */,
 				0D15FEA02A801AB500FD64E4 /* LandingPage.swift in Sources */,

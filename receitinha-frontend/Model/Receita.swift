@@ -11,7 +11,6 @@ import Foundation
 struct Receita: Identifiable, Decodable {
     
     let id: String
-    
     let titulo: String
     let passos: String
     let ingredientes: String
