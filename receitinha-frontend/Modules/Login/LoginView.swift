@@ -50,10 +50,14 @@ struct LoginView: View {
                 Task {
                     let response = await viewModel.authenticate()
                     switch response {
-                    case.success:
-                        print("deu bom")
+                    case .success(let usuario):
+                        UserDefaults.standard.setValue(usuario.data.token, forKey: "token")
+                        UserDefaults.standard.setValue(usuario.data.expiresIn, forKey: "expiresIn")
+                        AuthManager.shared.authenticated()
+                        coordinator.goToHome()
                     case .failure:
-                        print("deu ruim")
+                        viewModel.isSomethingWrong = true
+                        
                     }
                 }
             }
@@ -64,6 +68,7 @@ struct LoginView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(AssetColor.blue_100))
+        .alert("Falha na autenticação", isPresented: $viewModel.isSomethingWrong){}
     }
 
 }

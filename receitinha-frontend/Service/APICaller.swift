@@ -37,6 +37,7 @@ class APICaller {
             let (data , response) = try await URLSession.shared.data(for: request)
             
             guard let status = response.getStatusCode() else { return .failure(.errorInCall) }
+            print(status)
             
             let serverError = (300..<600).contains(status)
             

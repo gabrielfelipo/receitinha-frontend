@@ -21,6 +21,8 @@ final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var senha: String = ""
     
+    @Published var isSomethingWrong = false
+    
     private var caller = APICaller()
     
     func authenticate() async -> Result<LoginResponseData, APICallerError> {
