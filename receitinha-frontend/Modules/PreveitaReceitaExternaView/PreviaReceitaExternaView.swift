@@ -40,9 +40,9 @@ struct PreviaReceitaExternaView: View {
     private var detalhesVStack: some View {
         ScrollView{
             VStack(spacing: 24) {
-                recipeDescription
-                bar
                 ingredientsTitle
+                bar
+                recipeDescription
                 Spacer()
             }
             .padding(16)
