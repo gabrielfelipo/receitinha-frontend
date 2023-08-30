@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct FinalizeRecipeView: View {
-
+    
     let receita: Receitas
     @ObservedObject private var viewModel = FinalizeRecipeViewModel()
     @Environment(\.presentationMode) var presentationMode
-
+    
     var body: some View {
         ZStack {
             contentView
@@ -32,15 +32,24 @@ struct FinalizeRecipeView: View {
             Image(AssetImage.cenourinha)
             
             reminderAndActionAfterEndRecipe
-
+            
             Spacer()
             
             ReceitinhaButton(spacing: 16,
                              style: .primary,
                              title: "Finalizar Receita"){
                 
+                
                 presentationMode.wrappedValue.dismiss()
                 
+            }
+        }.task {
+            let response = await viewModel.unlockAchievement(receitaId: receita.id)
+            switch response {
+            case .success(let receitas):
+                viewModel.isSomethingWrong = false
+            case .failure:
+                viewModel.isSomethingWrong = true
             }
         }
     }
@@ -66,7 +75,7 @@ struct FinalizeRecipeView: View {
         .padding(.horizontal, 12)
         
     }
-
+    
 }
 
 struct FinalizeRecipe_Previews: PreviewProvider {
