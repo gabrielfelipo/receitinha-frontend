@@ -7,7 +7,6 @@
 //
 
 import SwiftUI
-import Combine
 
 // MARK: Variables to watch mark as Published. ViewModel also calls API/Core Data
 
@@ -17,37 +16,20 @@ final class ProcurarReceitaViewModel: ObservableObject {
     @Published var receitas: [Receita] = []
     
     @Published var somethingGoWrong = false
-
-    private var url: URL = APIBuilder()
-                                .routeTo(.receitas_externas)
-                                .build()
     
     
-    private var bag = Set<AnyCancellable>()
+    private let caller = APICaller()
     
-    func fetchReceitasBy(_ name: String){
+    func fetchReceitasBy(_ name: String) async -> Result<ProcurarReceita, APICallerError > {
         let params = URLQueryItem(name: "nome", value: name)
-        var receitas_externas_api = url
-        receitas_externas_api.append(queryItems: [params])
+                
+        var api = APIBuilder().routeTo(.receitas_externas).build()
+        api.append(queryItems: [params])
+        let request = caller.createRequest(with: api, and: .get)
         
-        URLSession
-            .shared
-            .dataTaskPublisher(for: receitas_externas_api)
-            .receive(on: DispatchQueue.main)
-            .map(\.data)
-            .decode(type: ProcurarReceita.self, decoder: JSONDecoder())
-            .sink { [weak self] response in
-                switch response {
-                case .failure:
-                    self?.receitas = []
-                    self?.somethingGoWrong = true
-                default:
-                    self?.somethingGoWrong = false
-                }
-            } receiveValue: { [weak self] receitasProcuradas in
-                self?.receitas = receitasProcuradas.data.receitas
-            }
-            .store(in: &bag)
+        let response = await caller.peform(request, expecting: ProcurarReceita.self)
+        
+        return response
     }
     
 }

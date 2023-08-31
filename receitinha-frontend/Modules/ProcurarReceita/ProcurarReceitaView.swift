@@ -26,7 +26,17 @@ struct ProcurarReceitaView: View {
                         }
                     }
                 }.onChange(of: viewModel.searchText){ name in
-                    viewModel.fetchReceitasBy(name)
+                    Task {
+                        let response = await viewModel.fetchReceitasBy(name)
+                        
+                        switch response {
+                        case .success(let receitas):
+                            viewModel.receitas = receitas.data.receitas
+                        case .failure:
+                            print("deu ruim nas receitas")
+                        }
+                    }
+                    
                 }
             }
             .background(.white)
