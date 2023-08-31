@@ -18,8 +18,12 @@ struct LoginResponseData: Codable {
     let data: LoginResponse
 }
 
-struct LoginResponse: Codable {
-    
+struct LoginToken: Codable {
     let token: String
     let expiresIn: Int
+}
+
+struct LoginResponse: Codable {
+    let token: LoginToken
+    let id: String
 }

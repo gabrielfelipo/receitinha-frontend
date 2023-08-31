@@ -13,26 +13,21 @@ import Combine
 
 final class AchievementViewModel: ObservableObject {
     
-    private var urlUser: URL = APIBuilder()
-                                .routeTo(.get_user)
-                                .build()
-    private var urlConquista: URL = APIBuilder()
-                                .routeTo(.get_conquista)
-                                .build()
     private var caller = APICaller()
 
     @Published var isSomethingWrong = false
     @Published var conquistasIds: [String] = []
     @Published var conquistas: [Conquista] = []
     
-    @Published var userId = "64e2e06133fcc642d7611d14"
+    @Published var userId: String = UserDefaults.standard.string(forKey: "userId")!
+
 
     private var bag = Set<AnyCancellable>()
 
     @Published var achievements: [Achievement] = [
-        Achievement(image: AssetImage.banana, name: "Mestre Banana", avaiable: .completed),
+        Achievement(image: AssetImage.banana, name: "Mestre Banana", avaiable: .blocked),
         Achievement(image: AssetImage.banana_split, name: "Mestre Split", avaiable: .blocked),
-        Achievement(image: AssetImage.burguer, name: "Mestre Burguer", avaiable: .completed),
+        Achievement(image: AssetImage.burguer, name: "Esquentou!!!", avaiable: .blocked),
         Achievement(image: AssetImage.ice, name: "Mestre Ice", avaiable: .blocked),
         Achievement(image: AssetImage.cookies, name: "Mestre Cookie", avaiable: .blocked),
         Achievement(image: AssetImage.muffin, name: "Mestre Muffin", avaiable: .blocked)
@@ -48,27 +43,21 @@ final class AchievementViewModel: ObservableObject {
         return response
     }
     
-    func getConquista(conquistaId: String) async {
-        var user_api = urlConquista
-        user_api.append(path: conquistaId)
-        
-        URLSession
-            .shared
-            .dataTaskPublisher(for: user_api)
-            .receive(on: DispatchQueue.main)
-            .map(\.data)
-            .decode(type: GetConquista.self, decoder: JSONDecoder())
-            .sink { [weak self] response in
-                switch response {
-                case .failure:
-                    print(response)
-                    self?.isSomethingWrong = true
-                default:
-                    self?.isSomethingWrong = false
-                }
-            } receiveValue: { [weak self] conquista in
-                self?.conquistas.append(conquista.data.conquista)
+    func getConquista(conquistaId: String) async -> Result<GetConquista, APICallerError>  {
+        var api = APIBuilder()
+            .routeTo(.get_conquista)
+            .build()
+        api.append(path: conquistaId)
+        let request = caller.createRequest(with: api, and: .get)
+        let response = await caller.peform(request, expecting: GetConquista.self)
+        return response
+    }
+    
+    func changeConquista(name: String) {
+        for (ind, achievement) in achievements.enumerated() {
+            if achievement.name == name {
+                achievements[ind] = Achievement(image: "\(achievement.image)-color", name: achievement.name, avaiable: .completed)
             }
-            .store(in: &bag)
+        }
     }
 }
